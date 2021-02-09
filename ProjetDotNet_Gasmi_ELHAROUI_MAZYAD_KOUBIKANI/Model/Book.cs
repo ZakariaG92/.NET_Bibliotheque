@@ -14,13 +14,13 @@ namespace ProjetDotNet_Gasmi_ELHAROUI_MAZYAD_KOUBIKANI.Model
         // Annoté   avec [BsonRepresentation(BsonType.ObjectId)] pour permettre la transmission du paramètre en tant que type string au lieu d’une structure ObjectID .
 
         [BsonElement("_id")]
-        public string Id { get; set; }
+        public int Id { get; set; }
 
         [BsonElement("title")]
-        public string Title { get; set; }
+        public String Title { get; set; }
         
         [BsonElement("contenu")]
-        public string Contenu { get; set; }
+        public String Contenu { get; set; }
 
         [BsonElement("prix")]
         public float Prix { get; set; }

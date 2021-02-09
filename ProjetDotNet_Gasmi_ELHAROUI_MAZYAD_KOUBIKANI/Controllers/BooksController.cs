@@ -4,10 +4,9 @@ using MongoDB.Driver;
 using ProjetDotNet_Gasmi_ELHAROUI_MAZYAD_KOUBIKANI.Model;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Threading.Tasks;
+using MongoDB.Driver.Linq;
+using System.Text.Json;
+
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -26,19 +25,51 @@ namespace ProjetDotNet_Gasmi_ELHAROUI_MAZYAD_KOUBIKANI.Controllers
             return new string[] { "value1", "value2" };
         }
 
-        // GET api/<BooksController>/5
-        [HttpGet("{id}")]
-        public string Get(int id)
+        // GET api/<BooksController>/test
+        [HttpGet("id/{id}")]
+        public string GetById(string id)
         {
-            return id.ToString();
+            IMongoCollection<Book> collection = MongoConn.getCollectionBooks();
+
+            var query =
+            from e in collection.AsQueryable<Book>()
+            where e.Id == Int32.Parse(id)
+            select e;
+
+            string jsonString = JsonSerializer.Serialize(query);
+
+            return jsonString;
+        }
+
+        // GET api/<BooksController>/test
+        [HttpGet("titles/{title}")]
+        public string GetByTitle(string title)
+        {
+           IMongoCollection<Book> collection = MongoConn.getCollectionBooks();
+
+            var query =
+            from e in collection.AsQueryable<Book>()
+            where e.Title == title
+            select e;
+
+            List<Book> listBooks = new List<Book>();
+            foreach (var books in query)
+            {
+                listBooks.Add(books);
+            }
+
+            string jsonString = JsonSerializer.Serialize(listBooks);
+
+            return jsonString;
         }
 
         // POST api/<BooksController>
         [HttpPost]
         public void Post([FromBody] Book book)
         {
-            var collection = MongoConn.getCollectionBooks();
+            IMongoCollection<Book> collection = MongoConn.getCollectionBooks();
             collection.InsertOne(book);
+            
         }
 
 

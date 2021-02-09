@@ -11,11 +11,11 @@ namespace ProjetDotNet_Gasmi_ELHAROUI_MAZYAD_KOUBIKANI.Model
     {
 
         [BsonElement("_id")]
-        public string Id { get; set; }
+        public int Id { get; set; }
 
 
         [BsonElement("nom")]
-        public  string Nom { get; set; }
+        public String Nom { get; set; }
 
     }
 }
