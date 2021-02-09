@@ -8,6 +8,7 @@ namespace ProjetDotNet_Gasmi_ELHAROUI_MAZYAD_KOUBIKANI.Model
 {
     public class Genre
     {
+        //test
         [JsonProperty("id")]
         String Id { get; set; }
 
