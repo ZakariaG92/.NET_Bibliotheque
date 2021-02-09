@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,19 +9,23 @@ namespace ProjetDotNet_Gasmi_ELHAROUI_MAZYAD_KOUBIKANI.Model
 {
     public class Book
     {
-        [JsonProperty("id")]
+        // Mapper l’objet CLR à la collection MongoDB.
+        // Annoté avec[BsonId] pour désigner cette propriété comme clé primaire du document.
+        // Annoté   avec [BsonRepresentation(BsonType.ObjectId)] pour permettre la transmission du paramètre en tant que type string au lieu d’une structure ObjectID .
+        [BsonId]
+        [BsonRepresentation(BsonType.ObjectId)]
         String Id { get; set; }
 
-        [JsonProperty("title")]
+        [BsonElement("title")]
         String Title { get; set; }
         
-        [JsonProperty("contenu")]
+        [BsonElement("contenu")]
         String Contenu { get; set; }
 
-        [JsonProperty("prix")]
+        [BsonElement("prix")]
         float Prix { get; set; }
 
-        [JsonProperty("genre")]
+        [BsonElement("genre")]
         List<Genre> Genre { get; set; }
 
     }
