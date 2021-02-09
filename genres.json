@@ -1,0 +1,42 @@
+[
+{
+    "id": 1,
+    "nom": "Roman"
+   
+},
+{
+    "id": 2,
+    "nom": "Biographie"
+   
+},
+{
+    "id": 3,
+    "nom": "Comédie"
+   
+},
+{
+    "id": 4,
+    "nom": "Encyclique"
+   
+},
+{
+    "id": 5,
+    "nom": "Médicale"
+   
+},
+{
+    "id": 6,
+    "nom": "Science"
+   
+},
+{
+    "id": 7,
+    "nom": "Culture"
+
+},
+{
+    "id": 8,
+    "nom": "Politique"
+
+}
+]

@@ -12,21 +12,21 @@ namespace ProjetDotNet_Gasmi_ELHAROUI_MAZYAD_KOUBIKANI.Model
         // Mapper l’objet CLR à la collection MongoDB.
         // Annoté avec[BsonId] pour désigner cette propriété comme clé primaire du document.
         // Annoté   avec [BsonRepresentation(BsonType.ObjectId)] pour permettre la transmission du paramètre en tant que type string au lieu d’une structure ObjectID .
-        [BsonId]
-        [BsonRepresentation(BsonType.ObjectId)]
-        String Id { get; set; }
+
+        [BsonElement("_id")]
+        public string Id { get; set; }
 
         [BsonElement("title")]
-        String Title { get; set; }
+        public string Title { get; set; }
         
         [BsonElement("contenu")]
-        String Contenu { get; set; }
+        public string Contenu { get; set; }
 
         [BsonElement("prix")]
-        float Prix { get; set; }
+        public float Prix { get; set; }
 
         [BsonElement("genre")]
-        List<Genre> Genre { get; set; }
+        public List<Genre> Genre { get; set; }
 
     }
 }

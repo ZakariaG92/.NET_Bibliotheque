@@ -1,7 +1,12 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using MongoDB.Bson;
+using MongoDB.Driver;
+using ProjetDotNet_Gasmi_ELHAROUI_MAZYAD_KOUBIKANI.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+using System.Net.Http;
 using System.Threading.Tasks;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -30,9 +35,14 @@ namespace ProjetDotNet_Gasmi_ELHAROUI_MAZYAD_KOUBIKANI.Controllers
 
         // POST api/<BooksController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        public void Post([FromBody] Book book)
         {
+            var collection = MongoConn.getCollectionBooks();
+            collection.InsertOne(book);
         }
+
+
+
 
         // PUT api/<BooksController>/5
         [HttpPut("{id}")]
