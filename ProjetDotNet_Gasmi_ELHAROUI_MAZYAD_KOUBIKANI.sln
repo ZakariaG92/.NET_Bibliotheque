@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjetDotNet_Gasmi_ELHAROUI_MAZYAD_KOUBIKANI", "ProjetDotNet_Gasmi_ELHAROUI_MAZYAD_KOUBIKANI\ProjetDotNet_Gasmi_ELHAROUI_MAZYAD_KOUBIKANI.csproj", "{C6B9A47A-C2BF-45E7-B9AC-BD4688D6AA4D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjetDotNet_Gasmi_ELHAROUI_MAZYAD_KOUBIKANI", "ProjetDotNet_Gasmi_ELHAROUI_MAZYAD_KOUBIKANI\ProjetDotNet_Gasmi_ELHAROUI_MAZYAD_KOUBIKANI.csproj", "{C6B9A47A-C2BF-45E7-B9AC-BD4688D6AA4D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientApp", "ClientApp\ClientApp.csproj", "{FCAE37C4-DF78-47E4-A818-699267114E2A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{C6B9A47A-C2BF-45E7-B9AC-BD4688D6AA4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C6B9A47A-C2BF-45E7-B9AC-BD4688D6AA4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C6B9A47A-C2BF-45E7-B9AC-BD4688D6AA4D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FCAE37C4-DF78-47E4-A818-699267114E2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCAE37C4-DF78-47E4-A818-699267114E2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCAE37C4-DF78-47E4-A818-699267114E2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCAE37C4-DF78-47E4-A818-699267114E2A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

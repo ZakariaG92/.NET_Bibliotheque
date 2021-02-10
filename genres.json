@@ -1,41 +1,41 @@
 [
 {
-    "id": 1,
+    "_id": 1,
     "nom": "Roman"
    
 },
 {
-    "id": 2,
+    "_id": 2,
     "nom": "Biographie"
    
 },
 {
-    "id": 3,
+    "_id": 3,
     "nom": "Comédie"
    
 },
 {
-    "id": 4,
+    "_id": 4,
     "nom": "Encyclique"
    
 },
 {
-    "id": 5,
+    "_id": 5,
     "nom": "Médicale"
    
 },
 {
-    "id": 6,
+    "_id": 6,
     "nom": "Science"
    
 },
 {
-    "id": 7,
+    "_id": 7,
     "nom": "Culture"
 
 },
 {
-    "id": 8,
+    "_id": 8,
     "nom": "Politique"
 
 }
