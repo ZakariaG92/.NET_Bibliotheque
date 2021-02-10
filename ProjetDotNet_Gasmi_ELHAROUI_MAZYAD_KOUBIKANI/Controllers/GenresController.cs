@@ -59,5 +59,25 @@ namespace ProjetDotNet_Gasmi_ELHAROUI_MAZYAD_KOUBIKANI.Controllers
 
             return jsonString;
         }
+
+
+        // POST api/<GenresController>
+        [HttpPost]
+        public void Post([FromBody] Genre genre)
+        {
+            IMongoCollection<Genre> collection = MongoConn.getCollectionGenres();
+            collection.InsertOne(genre);
+
+        }
+
+        // PUT api/<GenresController>/5
+        [HttpPut("{id}")]
+        public void Put(int id, [FromBody] string value)
+        {
+        }
+
+
+
+
     }
 }
