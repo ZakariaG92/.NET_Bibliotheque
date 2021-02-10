@@ -76,6 +76,16 @@ namespace ProjetDotNet_Gasmi_ELHAROUI_MAZYAD_KOUBIKANI.Controllers
         {
         }
 
+        // DELETE api/<GenresController>/5
+        [HttpDelete("{id}")]
+        public void Delete(string id)
+        {
+            IMongoCollection<Genre> collection = MongoConn.getCollectionGenres();
+
+            FilterDefinition<Genre> filter = new BsonDocument("_id", Int32.Parse(id));
+            collection.DeleteOne(filter);
+
+        }
 
         
 
