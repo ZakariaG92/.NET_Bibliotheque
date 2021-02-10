@@ -89,7 +89,6 @@ namespace ProjetDotNet_Gasmi_ELHAROUI_MAZYAD_KOUBIKANI.Controllers
 
             FilterDefinition<Book> filter = new BsonDocument("_id", Int32.Parse(id));
             collection.DeleteOne(filter);
-
         }
     }
 }
