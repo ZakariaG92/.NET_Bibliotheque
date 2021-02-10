@@ -85,6 +85,20 @@ namespace ProjetDotNet_Gasmi_ELHAROUI_MAZYAD_KOUBIKANI.Controllers
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
+            IMongoCollection<Book> collection = MongoConn.getCollectionBooks();
+
+            var query =
+            from e in collection.AsQueryable<Book>()
+            where e.Id == id
+            select e;
+
+            List<Book> listBooks = new List<Book>();
+            foreach (var books in query)
+            {
+                listBooks.Remove(books);
+            }
+
+            string jsonString = JsonSerializer.Serialize(listBooks);
         }
     }
 }
