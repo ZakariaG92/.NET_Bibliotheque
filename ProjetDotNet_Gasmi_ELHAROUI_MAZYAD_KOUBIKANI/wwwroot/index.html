@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>BookService</title>
+    <link rel="stylesheet" href="css/site.css" />
+</head>
+<body>
+    <div class="page-header">
+        <h1>BookService</h1>
+    </div>
+
+    <h3>Ajouter un livre</h3>
+    <form action="javascript:void(0);" method="POST" onsubmit="addItem()">
+        <input type="text" id="Id" placeholder="Réference de livre (Int)">
+        <input type="text" id="Title" placeholder="Title">
+        <input type="text" id="Contenu" placeholder="Contenu">
+        <input type="text" id="Prix" placeholder="Prix">
+        <select id="selectGenre">
+            <option value="0">Choisissez un genre</option>
+        </select>
+        <input type="submit" value="Add">
+    </form>
+
+    <div id="editForm">
+        <h3>Edit</h3>
+        <form action="javascript:void(0);" onsubmit="updateItem()">
+            <input id="edit-id">
+            <input id="edit-title">
+            <input id="edit-prix">
+            <input id="edit-contenu">
+            <select id="edit-Genre">
+                <option value="0">Choisissez un genre</option>
+            </select>
+            <input type="submit" value="Save">
+            <a onclick="closeInput()" aria-label="Close">&#10006;</a>
+        </form>
+    </div>
+
+    <p id="counter"></p>
+
+    <p id="GFG_UP" style="font-size: 15px; font-weight: bold;">
+    </p>
+
+    <table>
+        <tr>
+            <th>Is Complete?</th>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Contenu</th>
+            <th>Prix</th>
+            <th>Genre</th>
+            <th></th>
+            <th></th>
+        </tr>
+        <tbody id="todos"></tbody>
+    </table>
+
+    <script src="js/site.js" asp-append-version="true"></script>
+    <script type="text/javascript">
+        getItems();
+        getGenres();
+        //afficherGenres();
+    </script>
+</body>
+</html>
