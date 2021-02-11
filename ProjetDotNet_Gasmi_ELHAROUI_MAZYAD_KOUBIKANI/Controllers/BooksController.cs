@@ -91,7 +91,6 @@ namespace ProjetDotNet_Gasmi_ELHAROUI_MAZYAD_KOUBIKANI.Controllers
         {
             IMongoCollection<Book> collection = MongoConn.getCollectionBooks();
             collection.InsertOne(book);
-            
         }
 
 
@@ -99,9 +98,16 @@ namespace ProjetDotNet_Gasmi_ELHAROUI_MAZYAD_KOUBIKANI.Controllers
 
         // PUT api/<BooksController>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public void Put(int id, [FromBody] Book book)
         {
+            IMongoCollection<Book> collection = MongoConn.getCollectionBooks();
+
+            FilterDefinition<Book> filter = new BsonDocument("_id", id);
+
+            collection.ReplaceOne(filter, book);
         }
+
+
 
         // DELETE api/<BooksController>/5
         [HttpDelete("{id}")]

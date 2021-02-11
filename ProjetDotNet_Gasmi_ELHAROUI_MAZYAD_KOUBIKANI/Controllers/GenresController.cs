@@ -85,10 +85,17 @@ namespace ProjetDotNet_Gasmi_ELHAROUI_MAZYAD_KOUBIKANI.Controllers
 
         }
 
+   
+
         // PUT api/<GenresController>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public void Put(int id, [FromBody] Genre genre)
         {
+            IMongoCollection<Genre> collection = MongoConn.getCollectionGenres();
+
+            FilterDefinition<Genre> filter = new BsonDocument("_id", id);
+
+            collection.ReplaceOne(filter, genre);
         }
 
         // DELETE api/<GenresController>/5
