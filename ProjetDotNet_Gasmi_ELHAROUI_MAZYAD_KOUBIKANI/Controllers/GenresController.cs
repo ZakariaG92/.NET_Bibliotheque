@@ -21,6 +21,21 @@ namespace ProjetDotNet_Gasmi_ELHAROUI_MAZYAD_KOUBIKANI.Controllers
             return new string[] { "value1", "value2" };
         }
 
+        // GET api/<GenresController>/all genres
+        [HttpGet("all")]
+        public string GetAllGenres()
+        {
+            IMongoCollection<Genre> collection = MongoConn.getCollectionGenres();
+
+            var query =
+            from e in collection.AsQueryable<Genre>()
+            select e;
+
+            string jsonString = JsonSerializer.Serialize(query);
+
+            return jsonString;
+        }
+
         // GET api/<GenresController>/test
         [HttpGet("id/{id}")]
         public string GetById(string id)
