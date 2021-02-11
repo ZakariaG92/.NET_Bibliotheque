@@ -19,11 +19,30 @@ namespace ProjetDotNet_Gasmi_ELHAROUI_MAZYAD_KOUBIKANI.Controllers
         // GET: api/<BooksController>
         // GET: api/<BooksController>
 
+        
         [HttpGet]
         public IEnumerable<string> Get()
         {
             return new string[] { "value1", "value2" };
         }
+        
+
+
+        // GET api/<BooksController>/all books
+        [HttpGet("all")]
+        public string GetAllBooks()
+        {
+            IMongoCollection<Book> collection = MongoConn.getCollectionBooks();
+
+            var query =
+            from e in collection.AsQueryable<Book>()
+            select e;
+
+            string jsonString = JsonSerializer.Serialize(query);
+
+            return jsonString;
+        }
+
 
         // GET api/<BooksController>/test
         [HttpGet("id/{id}")]
@@ -40,6 +59,9 @@ namespace ProjetDotNet_Gasmi_ELHAROUI_MAZYAD_KOUBIKANI.Controllers
 
             return jsonString;
         }
+
+
+
 
         // GET api/<BooksController>/test
         [HttpGet("titles/{title}")]
