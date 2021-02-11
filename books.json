@@ -1,209 +1,209 @@
 [
 	{
-		"id": 1,
+		"_id": 1,
 		"title": "Fluconazole",
 		"contenu": "nonummy ultricies ornare, elit elit fermentum risus, at fringilla purus mauris a nunc. In at pede. Cras vulputate velit eu sem. Pellentesque ut ipsum ac mi eleifend egestas. Sed pharetra, felis eget varius ultrices, mauris ipsum porta elit, a feugiat tellus lorem eu metus. In lorem. Donec elementum, lorem ut aliquam iaculis, lacus pede sagittis augue, eu tempor erat neque non quam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam fringilla cursus purus. Nullam scelerisque neque sed sem egestas blandit. Nam nulla magna,",
         "prix": 1996,
         "genre":[{
-            "id": 2,
+            "_id": 2,
             "nom": "Biographie"
            
         }
         ]
 	},
 	{
-		"id": 2,
+		"_id": 2,
 		"title": "Lorazepam",
-		"contenu": "vehicula. Pellentesque tincidunt tempus risus. Donec egestas. Duis ac",
+		"contenu": "vehicula. Pellentesque tinc_idunt tempus risus. Donec egestas. Duis ac",
         "prix": 1163,
         "genre":[{
-            "id": 5,
+            "_id": 5,
             "nom": "Médicale"
            
         }
         ]
 	},
 	{
-		"id": 3,
+		"_id": 3,
 		"title": "Lantus Solostar",
-		"contenu": "semper, dui lectus rutrum urna, nec luctus felis purus ac tellus. Suspendisse sed dolor. Fusce mi lorem, vehicula et, rutrum eu, ultrices sit amet, risus. Donec nibh enim, gravida sit amet, dapibus id, blandit at, nisi. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Proin vel nisl. Quisque fringilla euismod enim. Etiam gravida",
+		"contenu": "semper, dui lectus rutrum urna, nec luctus felis purus ac tellus. Suspendisse sed dolor. Fusce mi lorem, vehicula et, rutrum eu, ultrices sit amet, risus. Donec nibh enim, grav_ida sit amet, dapibus _id, blandit at, nisi. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur r_idiculus mus. Proin vel nisl. Quisque fringilla euismod enim. Etiam grav_ida",
         "prix": 1182,
         "genre":[{
-            "id": 7,
+            "_id": 7,
             "nom": "Culture"
         
         },
         {
-            "id": 6,
+            "_id": 6,
             "nom": "Science"
            
         }
         ]
 	},
 	{
-		"id": 4,
+		"_id": 4,
 		"title": "Promethazine HCl",
 		"contenu": "ultricies ornare, elit elit fermentum risus, at fringilla purus mauris a nunc. In at pede. Cras vulputate velit eu sem. Pellentesque ut ipsum ac mi eleifend egestas. Sed pharetra, felis eget varius ultrices, mauris ipsum porta elit, a feugiat tellus lorem eu metus. In lorem. Donec elementum, lorem ut aliquam iaculis, lacus pede sagittis augue, eu tempor erat neque non quam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam fringilla cursus purus. Nullam scelerisque neque sed sem egestas blandit. Nam nulla magna,",
         "prix": 1583,
         "genre":[{
-            "id": 8,
+            "_id": 8,
             "nom": "Politique"
         
         },
         {
-            "id": 2,
+            "_id": 2,
             "nom": "Biographie"
            
         }
         ]
 	},
 	{
-		"id": 5,
+		"_id": 5,
 		"title": "Lisinopril",
-		"contenu": "quis turpis vitae purus gravida sagittis. Duis gravida. Praesent eu nulla at sem molestie sodales. Mauris blandit enim consequat purus. Maecenas libero est, congue a, aliquet vel, vulputate eu, odio. Phasellus at augue id ante dictum cursus. Nunc mauris elit, dictum eu, eleifend nec, malesuada ut, sem.",
+		"contenu": "quis turpis vitae purus grav_ida sagittis. Duis grav_ida. Praesent eu nulla at sem molestie sodales. Mauris blandit enim consequat purus. Maecenas libero est, congue a, aliquet vel, vulputate eu, odio. Phasellus at augue _id ante dictum cursus. Nunc mauris elit, dictum eu, eleifend nec, malesuada ut, sem.",
         "prix": 1786,
         "genre":[{
-            "id": 6,
+            "_id": 6,
             "nom": "Science"
            
         }
         ]
 	},
 	{
-		"id": 6,
+		"_id": 6,
 		"title": "Levaquin",
-		"contenu": "litora torquent per conubia nostra, per inceptos hymenaeos. Mauris ut quam vel sapien imperdiet ornare. In faucibus. Morbi vehicula. Pellentesque tincidunt tempus risus. Donec egestas. Duis ac arcu. Nunc mauris. Morbi non sapien molestie orci tincidunt adipiscing. Mauris molestie pharetra nibh. Aliquam ornare, libero at auctor ullamcorper, nisl arcu iaculis enim, sit amet ornare lectus justo eu arcu. Morbi sit amet massa. Quisque porttitor eros nec tellus. Nunc lectus pede, ultrices a, auctor non, feugiat nec, diam.",
+		"contenu": "litora torquent per conubia nostra, per inceptos hymenaeos. Mauris ut quam vel sapien imperdiet ornare. In faucibus. Morbi vehicula. Pellentesque tinc_idunt tempus risus. Donec egestas. Duis ac arcu. Nunc mauris. Morbi non sapien molestie orci tinc_idunt adipiscing. Mauris molestie pharetra nibh. Aliquam ornare, libero at auctor ullamcorper, nisl arcu iaculis enim, sit amet ornare lectus justo eu arcu. Morbi sit amet massa. Quisque porttitor eros nec tellus. Nunc lectus pede, ultrices a, auctor non, feugiat nec, diam.",
         "prix": 0408,
         "genre":[{
-            "id": 1,
+            "_id": 1,
             "nom": "Roman"
            
         },
         {
-            "id": 7,
+            "_id": 7,
             "nom": "Culture"
         
         }
         ]
 	},
 	{
-		"id": 7,
+		"_id": 7,
 		"title": "Benicar HCT",
 		"contenu": "at pede. Cras vulputate velit eu sem. Pellentesque ut ipsum ac mi eleifend egestas. Sed pharetra, felis eget varius ultrices, mauris ipsum porta elit, a feugiat tellus lorem eu metus. In lorem. Donec elementum, lorem ut aliquam iaculis, lacus pede sagittis augue, eu tempor erat neque non quam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis",
         "prix": 0724,
         "genre":[{
-            "id": 8,
+            "_id": 8,
             "nom": "Politique"
         
         },
         {
-            "id": 2,
+            "_id": 2,
             "nom": "Biographie"
            
         }
         ]
 	},
 	{
-		"id": 8,
+		"_id": 8,
 		"title": "Diovan",
-		"contenu": "Nullam scelerisque neque sed sem egestas blandit. Nam nulla magna, malesuada vel, convallis in, cursus et, eros. Proin ultrices. Duis volutpat nunc sit amet metus. Aliquam erat volutpat. Nulla facilisis. Suspendisse commodo tincidunt nibh. Phasellus nulla. Integer vulputate, risus a ultricies adipiscing, enim mi tempor lorem, eget mollis lectus",
+		"contenu": "Nullam scelerisque neque sed sem egestas blandit. Nam nulla magna, malesuada vel, convallis in, cursus et, eros. Proin ultrices. Duis volutpat nunc sit amet metus. Aliquam erat volutpat. Nulla facilisis. Suspendisse commodo tinc_idunt nibh. Phasellus nulla. Integer vulputate, risus a ultricies adipiscing, enim mi tempor lorem, eget mollis lectus",
         "prix": 0110,
         "genre":[{
-            "id": 5,
+            "_id": 5,
             "nom": "Médicale"
            
         }
         ]
 	},
 	{
-		"id": 9,
+		"_id": 9,
 		"title": "Benicar HCT",
 		"contenu": "luctus felis purus ac tellus. Suspendisse sed dolor. Fusce mi lorem, vehicula et, rutrum eu, ultrices",
         "prix": 1794,
         "genre":[{
-            "id": 2,
+            "_id": 2,
             "nom": "Biographie"
            
         }
         ]
 	},
 	{
-		"id": 10,
+		"_id": 10,
 		"title": "Lorazepam",
-		"contenu": "consequat, lectus sit amet luctus vulputate, nisi sem semper erat, in consectetuer ipsum nunc id enim. Curabitur massa. Vestibulum accumsan neque et nunc. Quisque ornare tortor at risus. Nunc ac sem ut dolor dapibus gravida. Aliquam tincidunt, nunc ac mattis ornare, lectus ante dictum mi, ac mattis velit justo nec ante. Maecenas mi felis, adipiscing fringilla, porttitor vulputate, posuere vulputate, lacus. Cras interdum. Nunc sollicitudin",
+		"contenu": "consequat, lectus sit amet luctus vulputate, nisi sem semper erat, in consectetuer ipsum nunc _id enim. Curabitur massa. Vestibulum accumsan neque et nunc. Quisque ornare tortor at risus. Nunc ac sem ut dolor dapibus grav_ida. Aliquam tinc_idunt, nunc ac mattis ornare, lectus ante dictum mi, ac mattis velit justo nec ante. Maecenas mi felis, adipiscing fringilla, porttitor vulputate, posuere vulputate, lacus. Cras interdum. Nunc sollicitudin",
         "prix": 1963,
         "genre":[{
-            "id": 1,
+            "_id": 1,
             "nom": "Roman"
            
         }
         ]
 	},
 	{
-		"id": 11,
+		"_id": 11,
 		"title": "Simvastatin",
 		"contenu": "Duis at lacus.",
         "prix": 1762,
         "genre":[{
-            "id": 2,
+            "_id": 2,
             "nom": "Biographie"
            
         }
         ]
 	},
 	{
-		"id": 12,
+		"_id": 12,
 		"title": "Hydrocodone/APAP",
-		"contenu": "Etiam vestibulum massa rutrum magna. Cras convallis convallis dolor. Quisque tincidunt pede ac urna. Ut tincidunt vehicula risus. Nulla eget metus eu erat semper rutrum. Fusce dolor quam, elementum at, egestas a, scelerisque sed, sapien. Nunc pulvinar arcu et pede. Nunc sed orci lobortis augue scelerisque mollis. Phasellus libero mauris, aliquam eu, accumsan sed, facilisis vitae, orci. Phasellus dapibus quam quis diam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce aliquet magna a neque.",
+		"contenu": "Etiam vestibulum massa rutrum magna. Cras convallis convallis dolor. Quisque tinc_idunt pede ac urna. Ut tinc_idunt vehicula risus. Nulla eget metus eu erat semper rutrum. Fusce dolor quam, elementum at, egestas a, scelerisque sed, sapien. Nunc pulvinar arcu et pede. Nunc sed orci lobortis augue scelerisque mollis. Phasellus libero mauris, aliquam eu, accumsan sed, facilisis vitae, orci. Phasellus dapibus quam quis diam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce aliquet magna a neque.",
         "prix": 0259,
         "genre":[{
-            "id": 4,
+            "_id": 4,
             "nom": "Encyclique"
            
         }
         ]
 	},
 	{
-		"id": 13,
+		"_id": 13,
 		"title": "Celebrex",
-		"contenu": "adipiscing lobortis risus. In mi pede, nonummy ut, molestie in, tempus eu, ligula. Aenean euismod mauris eu elit. Nulla facilisi. Sed neque. Sed eget lacus. Mauris non dui nec urna suscipit nonummy. Fusce fermentum fermentum arcu. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ornare. Fusce mollis. Duis sit amet diam eu dolor egestas rhoncus. Proin nisl sem, consequat nec, mollis vitae, posuere at, velit. Cras lorem lorem, luctus ut, pellentesque eget, dictum placerat, augue. Sed molestie. Sed id risus quis diam luctus lobortis. Class",
+		"contenu": "adipiscing lobortis risus. In mi pede, nonummy ut, molestie in, tempus eu, ligula. Aenean euismod mauris eu elit. Nulla facilisi. Sed neque. Sed eget lacus. Mauris non dui nec urna suscipit nonummy. Fusce fermentum fermentum arcu. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ornare. Fusce mollis. Duis sit amet diam eu dolor egestas rhoncus. Proin nisl sem, consequat nec, mollis vitae, posuere at, velit. Cras lorem lorem, luctus ut, pellentesque eget, dictum placerat, augue. Sed molestie. Sed _id risus quis diam luctus lobortis. Class",
         "prix": 1086,
         "genre":[{
-            "id": 3,
+            "_id": 3,
             "nom": "Comédie"
            
         },
         {
-            "id": 1,
+            "_id": 1,
             "nom": "Roman"
            
         }
         ]
 	},
 	{
-		"id": 14,
+		"_id": 14,
 		"title": "Flovent HFA",
-		"contenu": "ullamcorper, velit in aliquet lobortis, nisi nibh lacinia orci, consectetuer euismod est arcu ac orci. Ut semper pretium neque. Morbi quis urna. Nunc quis arcu vel quam dignissim pharetra. Nam ac nulla. In tincidunt congue turpis. In condimentum. Donec at arcu. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec tincidunt. Donec vitae erat vel pede blandit congue. In scelerisque scelerisque dui. Suspendisse ac metus vitae velit egestas lacinia. Sed congue, elit sed consequat auctor, nunc nulla vulputate dui, nec tempus mauris erat eget ipsum. Suspendisse sagittis. Nullam",
+		"contenu": "ullamcorper, velit in aliquet lobortis, nisi nibh lacinia orci, consectetuer euismod est arcu ac orci. Ut semper pretium neque. Morbi quis urna. Nunc quis arcu vel quam dignissim pharetra. Nam ac nulla. In tinc_idunt congue turpis. In condimentum. Donec at arcu. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec tinc_idunt. Donec vitae erat vel pede blandit congue. In scelerisque scelerisque dui. Suspendisse ac metus vitae velit egestas lacinia. Sed congue, elit sed consequat auctor, nunc nulla vulputate dui, nec tempus mauris erat eget ipsum. Suspendisse sagittis. Nullam",
         "prix": 0892,
         "genre":[{
-            "id": 5,
+            "_id": 5,
             "nom": "Médicale"
            
         },
         {
-            "id": 6,
+            "_id": 6,
             "nom": "Science"
            
         }
         ]
 	},
 	{
-		"id": 15,
+		"_id": 15,
 		"title": "Amitriptyline HCl",
 		"contenu": "Nunc mauris elit, dictum eu, eleifend nec, malesuada ut, sem. Nulla interdum.",
         "prix": 0681,
         "genre":[{
-            "id": 2,
+            "_id": 2,
             "nom": "Biographie"
            
         }

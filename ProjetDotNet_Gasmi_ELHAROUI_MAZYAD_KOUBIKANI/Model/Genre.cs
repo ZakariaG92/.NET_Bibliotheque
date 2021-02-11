@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ProjetDotNet_Gasmi_ELHAROUI_MAZYAD_KOUBIKANI.Model
 {
-    public class Genre
+    public class Genre 
     {
 
         [BsonElement("_id")]
