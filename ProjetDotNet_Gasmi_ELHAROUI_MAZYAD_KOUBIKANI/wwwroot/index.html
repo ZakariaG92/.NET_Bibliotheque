@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>BookService</title>
     <link rel="stylesheet" href="css/site.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
     <div class="page-header">
@@ -12,12 +13,12 @@
 
     <h3>Ajouter un livre</h3>
     <form action="javascript:void(0);" method="POST" onsubmit="addItem()">
-        <input type="text" id="Id" placeholder="Réference de livre (Int)">
-        <input type="text" id="Title" placeholder="Title">
-        <input type="text" id="Contenu" placeholder="Contenu">
-        <input type="text" id="Prix" placeholder="Prix">
-        <select id="selectGenre">
-            <option value="0">Choisissez un genre</option>
+        <input type="text" id="Id" placeholder="Réference de livre (Int)" required>
+        <input type="text" id="Title" placeholder="Title" required>
+        <input type="text" id="Contenu" placeholder="Contenu" required>
+        <input type="text" id="Prix" placeholder="Prix" required>
+        <select id="selectGenre" required>
+            <option value="">Choisissez un genre</option>
         </select>
         <input type="submit" value="Add">
     </form>
@@ -26,11 +27,11 @@
         <h3>Edit</h3>
         <form action="javascript:void(0);" onsubmit="updateItem()">
             <input id="edit-id">
-            <input id="edit-title">
-            <input id="edit-prix">
-            <input id="edit-contenu">
-            <select id="edit-Genre">
-                <option value="0">Choisissez un genre</option>
+            <input id="edit-title" required>
+            <input id="edit-prix" required>
+            <input id="edit-contenu" required>
+            <select id="edit-Genre" required>
+                <option value="">Choisissez un genre</option>
             </select>
             <input type="submit" value="Save">
             <a onclick="closeInput()" aria-label="Close">&#10006;</a>
@@ -60,7 +61,7 @@
     <script type="text/javascript">
         getItems();
         getGenres();
-        //afficherGenres();
+            //afficherGenres();
     </script>
 </body>
 </html>
