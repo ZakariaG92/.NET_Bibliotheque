@@ -1,0 +1,23 @@
+﻿<Window x:Class="ClientApp.WindowBooks"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ClientApp"
+        mc:Ignorable="d"
+        Title="WindowBooks" Height="450" Width="800">
+    <StackPanel  Loaded="StackPanel_Loaded">
+        <ListBox x:Name="listBoxBooks" Background="Chocolate" ></ListBox>
+        <ListView x:Name="listView"  >
+
+        </ListView>
+        <ComboBox x:Name="combobox" SelectionChanged="combobox_SelectionChanged"></ComboBox>
+        <Label Name="labelPrix" Content="Prix du Livre"/>
+        <Label Name="labelgenre1" Content=""/>
+        <Button x:Name="detailButton" Content="Lire le contenu du livre" Click="detailButton_Click" ></Button>
+
+
+
+
+    </StackPanel>
+</Window>
