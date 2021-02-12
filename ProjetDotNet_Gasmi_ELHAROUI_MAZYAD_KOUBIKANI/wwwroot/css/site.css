@@ -26,7 +26,7 @@ td {
 .center_div {
     margin: 0 auto;
     width: 70%;
-    margin-top: 5%;
+    margin-top: 10%;
     margin-bottom: 5%;
 }
 
@@ -40,11 +40,11 @@ td {
     white-space: nowrap;
 }
 
-body {
+/*body {
     color: #404E67;
     background: #F5F7FA;
     font-family: 'Open Sans', sans-serif;
-}
+}*/
 
 .table-wrapper {
     width: 700px;

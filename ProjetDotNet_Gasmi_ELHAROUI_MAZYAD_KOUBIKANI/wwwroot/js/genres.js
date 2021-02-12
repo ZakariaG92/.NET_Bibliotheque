@@ -43,15 +43,20 @@ function addGenre() {
 
 // Supprimer un genre
 function deleteItem(id) {
-    fetch(`${uriGenres1}/${id}`, {
-        method: 'DELETE'
-    })
-        .then(() => getGenres())
-        .catch(error => console.error('Unable to delete item.', error));
-    alert('Le genre a bien ete supprime !');
-    window.location.href = 'liste-genres.html';
-}
 
+    var result = confirm("Etes-vous sur de vouloir supprimer ce livre ?");
+
+    if (result) {
+
+        fetch(`${uriGenres1}/${id}`, {
+            method: 'DELETE'
+        })
+            .then(() => getGenres())
+            .catch(error => console.error('Unable to delete item.', error));
+        alert('Le genre a bien ete supprime !');
+        window.location.href = 'liste-genres.html';
+    }
+}
 
 // Modifier un genre
 function displayEditForm(id) {
@@ -106,7 +111,7 @@ function _displayGenres(data) {
 
         let editButton = button.cloneNode(false);
         editButton.setAttribute('onclick', `displayEditForm(${item.Id})`);
-        editButton.classList.add('btn', 'btn-success');
+        editButton.classList.add('btn', 'btn-warning');
         editButton.innerHTML = '<i class="fa fa-edit"></i>';
 
         let deleteButton = button.cloneNode(false);

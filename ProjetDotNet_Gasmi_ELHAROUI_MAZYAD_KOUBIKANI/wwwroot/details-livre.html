@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title>Ajouter un livre</title>
+    <title>Details du livre</title>
 
     <link rel="stylesheet" href="css/site.css" />
     <link rel="stylesheet" href="css/styles.css" />
@@ -42,40 +42,39 @@
         </div>
     </nav>
 
-    <div id="addLivre" class="center_div">
-        <h3>Ajouter un livre</h3>
+    <div id="editForm" class="center_div">
+        <h3>Details du livre </h3>
         <br />
-        <form action="javascript:void(0);" method="POST" onsubmit="addItem()">
+        <form>
 
             <div class="form-group">
-                <label for="Id">Réference de livre (Int)</label>
-                <input type="text" class="form-control" id="Id" placeholder="Réference de livre (Int)" required>
+                <label for="edit-id">Réference de livre (Int)</label>
+                <input type="text" class="form-control" readonly id="edit-id" placeholder="Réference de livre (Int)" required>
             </div>
 
             <div class="form-group">
-                <label for="Title">Titre du livre</label>
-                <input type="text" class="form-control" id="Title" placeholder="Titre du livre" required>
+                <label for="edit-title">Titre du livre</label>
+                <input type="text" class="form-control" readonly id="edit-title" placeholder="Titre du livre" required>
             </div>
 
             <div class="form-group">
-                <label for="Contenu">Contenu</label>
-                <textarea class="form-control" id="Contenu" rows="5" required></textarea>
+                <label for="edit-contenu">Contenu</label>
+                <textarea class="form-control" id="edit-contenu" readonly rows="5" required></textarea>
             </div>
 
             <div class="form-group">
-                <label for="Prix">Prix</label>
-                <input type="text" class="form-control" id="Prix" placeholder="Prix" required>
+                <label for="edit-prix">Prix</label>
+                <input type="text" class="form-control" readonly id="edit-prix" placeholder="Prix" required>
             </div>
 
             <div class="form-group">
-                <label for="selectGenre">Genre</label>
-                <select id="selectGenre" class="form-control" required>
-                    <option value="">Choisissez un genre</option>
-                </select>
+                <label for="edit-Genre">Genre</label>
+                <input type="text" class="form-control" readonly id="edit-Genre" placeholder="Genre" required>
             </div>
-
-            <button type="submit" class="btn btn-primary">Ajouter</button>
         </form>
+
+        <button class="btn btn-warning" onclick="versEditForm();">Modifier ce livre</button>
+
     </div>
 
 
@@ -88,7 +87,34 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
     <script type="text/javascript">
 
-        getGenresForAdd();
+        var url_string = window.location.href;
+        var url = new URL(url_string);
+        var id = url.searchParams.get("id");
+        var title = url.searchParams.get("title");
+        var contenu = url.searchParams.get("contenu");
+        var prix = url.searchParams.get("prix");
+        var genre = url.searchParams.get("genre");
+        /*console.log(url);
+        alert(url);*/
+
+        document.getElementById('edit-id').value = id;
+        document.getElementById('edit-title').value = title;
+        document.getElementById('edit-contenu').value = contenu;
+        document.getElementById('edit-prix').value = prix;
+        document.getElementById('edit-Genre').value = genre;
+        /*const genreTextbox = document.getElementById('edit-Genre').value;
+        genreTextbox.options[genreTextbox.selectedIndex].text = item.Genre[0].Nom;*/
+        document.getElementById('editForm').style.display = 'block';
+
+        // Modifier un livre
+        function versEditForm() {
+
+            // On passe les params en URL
+            window.location.href = 'modifier-livre.html?id=' + id + '&title=' + title + '&contenu=' + contenu + '&prix=' + prix + '&genre=' + genre;
+
+        }
+
+
     </script>
 
 </body>

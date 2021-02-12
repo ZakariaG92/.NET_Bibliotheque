@@ -105,18 +105,33 @@ function addItem() {
         .catch(error => console.error('Unable to add item.', error));
 
         alert('Votre livre a bien ete ajoute !');
-        window.location.href = 'index.html';
+        window.location.href = 'liste-livres.html';
 
 }
 
 // Supprimer un livre
 function deleteItem(id) {
-    fetch(`${uriBook}/${id}`, {
-        method: 'DELETE'
-    })
-        .then(() => getItems())
-        .catch(error => console.error('Unable to delete item.', error));
-    alert('Votre livre a bien ete supprime !');
+
+    var result = confirm("Etes-vous sur de vouloir supprimer ce livre ?");
+
+    if (result) {
+        fetch(`${uriBook}/${id}`, {
+            method: 'DELETE'
+        })
+            .then(() => getItems())
+            .catch(error => console.error('Unable to delete item.', error));
+        alert('Le livre a bien ete supprime !');
+    }
+}
+
+// details du livre
+function displayDetail(id) {
+
+    const item = todos.find(item => item.Id === id);
+
+    // On passe les params en URL
+    window.location.href = 'details-livre.html?id=' + item.Id + '&title=' + item.Title + '&contenu=' + item.Contenu + '&prix=' + item.Prix + '&genre=' + item.Genre[0].Nom;
+
 }
 
 // Modifier un livre
@@ -163,7 +178,7 @@ function updateItem() {
     console.log(JSON.stringify(item));
 
     alert('Votre livre a bien ete modifie !');
-    window.location.href = 'index.html';
+    window.location.href = 'liste-livres.html';
 
     return false;
 }
@@ -194,13 +209,18 @@ function _displayItems(data) {
 
         let editButton = button.cloneNode(false);
         editButton.setAttribute('onclick', `displayEditForm(${item.Id})`);
-        editButton.classList.add('btn', 'btn-success');
+        editButton.classList.add('btn', 'btn-warning');
         editButton.innerHTML = '<i class="fa fa-edit"></i>';
 
         let deleteButton = button.cloneNode(false);
         deleteButton.setAttribute('onclick', `deleteItem(${item.Id})`);
         deleteButton.classList.add('btn', 'btn-danger');
         deleteButton.innerHTML = '<i class="fa fa-trash"></i>';
+
+        let detailButton = button.cloneNode(false);
+        detailButton.setAttribute('onclick', `displayDetail(${item.Id})`);
+        detailButton.classList.add('btn', 'btn-primary');
+        detailButton.innerHTML = '<i class="material-icons">&#xE417;</i>';
 
         let tr = tBody.insertRow();
 
@@ -228,10 +248,13 @@ function _displayItems(data) {
         let textNodeGenre = document.createTextNode(item.Genre[0].Nom);
         td6.appendChild(textNodeGenre);
 
-        let td7 = tr.insertCell(5);
+        let td9 = tr.insertCell(5);
+        td9.appendChild(detailButton);
+
+        let td7 = tr.insertCell(6);
         td7.appendChild(editButton);
 
-        let td8 = tr.insertCell(6);
+        let td8 = tr.insertCell(7);
         td8.appendChild(deleteButton);
 
     });
