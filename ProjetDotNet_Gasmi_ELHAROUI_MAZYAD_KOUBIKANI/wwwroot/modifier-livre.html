@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+
+    <link rel="stylesheet" href="css/site.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">Acceuil</a>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link active" aria-current="page" href="index.html">Liste des livres</a>
+                    <a class="nav-link active" href="ajouter-livre.html">Ajouter un livre</a>
+                    <a class="nav-link active" href="liste-genres.html">Liste des genres</a>
+                    <a class="nav-link active" href="ajouter-genre.html">Ajouter un genre</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div id="editForm" class="center_div">
+        <h3>Modifier un livre </h3>
+        <br />
+        <form action="javascript:void(0);" onsubmit="updateItem()">
+
+            <div class="form-group">
+                <label for="edit-id">Réference de livre (Int)</label>
+                <input type="text" class="form-control" readonly id="edit-id" placeholder="Réference de livre (Int)" required>
+            </div>
+
+            <div class="form-group">
+                <label for="edit-title">Titre du livre</label>
+                <input type="text" class="form-control" id="edit-title" placeholder="Titre du livre" required>
+            </div>
+
+            <div class="form-group">
+                <label for="edit-contenu">Contenu</label>
+                <textarea class="form-control" id="edit-contenu" rows="5" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="edit-prix">Prix</label>
+                <input type="text" class="form-control" id="edit-prix" placeholder="Prix" required>
+            </div>
+
+            <div class="form-group">
+                <label for="edit-Genre">Example select</label>
+                <select id="edit-Genre" class="form-control" required>
+                    <option value="">Choisissez un genre</option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Enregistrer</button>
+
+        </form>
+    </div>
+
+
+    <script src="js/site.js" asp-append-version="true"></script>
+    <script type="text/javascript">
+
+        getGenresForEdit();
+
+        var url_string = window.location.href;
+        var url = new URL(url_string);
+        var id = url.searchParams.get("id");
+        var title = url.searchParams.get("title");
+        var contenu = url.searchParams.get("contenu");
+        var prix = url.searchParams.get("prix");
+        var genre = url.searchParams.get("genre");
+        /*console.log(url);
+        alert(url);*/
+
+        document.getElementById('edit-id').value = id;
+        document.getElementById('edit-title').value = title;
+        document.getElementById('edit-contenu').value = contenu;
+        document.getElementById('edit-prix').value = prix;
+        document.getElementById('edit-Genre').text = genre;
+        /*const genreTextbox = document.getElementById('edit-Genre').value;
+        genreTextbox.options[genreTextbox.selectedIndex].text = item.Genre[0].Nom;*/
+        document.getElementById('editForm').style.display = 'block';
+
+
+    </script>
+
+</body>
+</html>

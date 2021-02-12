@@ -1,9 +1,7 @@
 const uri = 'api/Books/all';
 const uriAllGenres = 'api/Genres/all';
-const uriPost = 'api/Books';
-const uriDelete = 'api/Books';
+const uriBook = 'api/Books';
 let todos = [];
-let tabGenres = [];
 
 // Recuperer tous les livres
 function getItems() {
@@ -13,8 +11,28 @@ function getItems() {
         .catch(error => console.error('Unable to get items.', error));
 }
 
-// Recuperer tous les genres
-function getGenres() {
+// Recuperer tous les genres pour le choix lors de l'ajout d'un nouveau livre
+function getGenresForEdit() {
+    fetch(uriAllGenres)
+        .then(response => response.json())
+        // On va remplir la liste <select> pour le POST/PUT des livres 
+        // Text = Nom du genre  //  Value = Id du genre (ça va etre utile)
+        .then(data => {
+            data.forEach(item => {
+                var select1 = document.getElementById("edit-Genre");
+
+                    var opt1 = item.Nom;
+                    var el1 = document.createElement("option");
+                    el1.textContent = opt1;
+                    el1.value = item.Id;
+                    select1.appendChild(el1);
+            })
+        })
+        .catch(error => console.error('Unable to get items.', error));   
+}
+
+// Recuperer tous les genres pour le choix lors de la modification d'un nouveau livre
+function getGenresForAdd() {
     fetch(uriAllGenres)
         .then(response => response.json())
         // On va remplir la list <select> pour le POST/PUT des livres 
@@ -23,25 +41,16 @@ function getGenres() {
             data.forEach(item => {
                 //tabGenres.push(item.Nom);
                 var select = document.getElementById("selectGenre");
-                var select1 = document.getElementById("edit-Genre");
 
-                    var opt = item.Nom;
-                    var el = document.createElement("option");
-                    el.textContent = opt;
-                    el.value = item.Id;
-                    select.appendChild(el);
+                var opt = item.Nom;
+                var el = document.createElement("option");
+                el.textContent = opt;
+                el.value = item.Id;
+                select.appendChild(el);
 
-                    var opt1 = item.Nom;
-                    var el1 = document.createElement("option");
-                    el1.textContent = opt1;
-                    el1.value = item.Id;
-                    select1.appendChild(el1);
             })
-            /*tabGenres.forEach(function (item, index, array) {
-            console.log(item, index);
-            });*/
         })
-        .catch(error => console.error('Unable to get items.', error));   
+        .catch(error => console.error('Unable to get items.', error));
 }
 
 /*function afficherGenres() {
@@ -64,25 +73,23 @@ function getGenres() {
 
 // Ajouter un livre
 function addItem() {
-    //const addNameTextbox = document.getElementById('add-name');
+
     const addIdTextbox = document.getElementById('Id');
     const addTitleTextbox = document.getElementById('Title');
     const addContenuTextbox = document.getElementById('Contenu');
     const addPrixTextbox = document.getElementById('Prix');
     const addGenreTextbox = document.getElementById('selectGenre');
 
-
     const item = {
-        //name: addNameTextbox.value.trim()
+        
         id: Number(addIdTextbox.value.trim()),
         title: addTitleTextbox.value.trim(),
         contenu: addContenuTextbox.value.trim(),
         prix: Number(addPrixTextbox.value.trim()),
         Genre: [{ "Id": Number(addGenreTextbox.value.trim()), "Nom": addGenreTextbox.options[addGenreTextbox.selectedIndex].text.trim() }]
     };
-    //item.tabGenres = []
 
-    fetch(uriPost, {
+    fetch(uriBook, {
         method: 'POST',
         headers: {
             'Accept': 'application/json',
@@ -96,57 +103,54 @@ function addItem() {
             addNameTextbox.value = '';
         })
         .catch(error => console.error('Unable to add item.', error));
-    console.log(JSON.stringify(item));
-}
 
+        alert('Votre livre a bien ete ajoute !');
+        window.location.href = 'index.html';
+
+}
 
 // Supprimer un livre
 function deleteItem(id) {
-    fetch(`${uriDelete}/${id}`, {
+    fetch(`${uriBook}/${id}`, {
         method: 'DELETE'
     })
         .then(() => getItems())
         .catch(error => console.error('Unable to delete item.', error));
+    alert('Votre livre a bien ete supprime !');
 }
 
+// Modifier un livre
 function displayEditForm(id) {
 
-    todos.forEach(function (item, index, array) {
+    /*todos.forEach(function (item, index, array) {
         console.log(item, index);
-    });
+    });*/
 
     const item = todos.find(item => item.Id === id);
-  
-    document.getElementById('edit-id').value = item.Id;
-    document.getElementById('edit-title').value = item.Title;
-    document.getElementById('edit-contenu').value = item.Contenu;
-    document.getElementById('edit-prix').value = item.Prix;
-    document.getElementById('edit-Genre').text = item.Genre[0].Nom;
-    /*const genreTextbox = document.getElementById('edit-Genre').value;
-    genreTextbox.options[genreTextbox.selectedIndex].text = item.Genre[0].Nom;*/
-    document.getElementById('editForm').style.display = 'block';
+
+    // On passe les params en URL
+    window.location.href = 'modifier-livre.html?id=' + item.Id + '&title=' + item.Title + '&contenu=' + item.Contenu + '&prix=' + item.Prix + '&genre=' + item.Genre[0].Nom;
+
 }
 
+// Modifier un livre -suite-
 function updateItem() {
-    //const itemId = document.getElementById('edit-id').value;
+
     const itemId = document.getElementById('edit-id').value;
     const addTitleTextbox = document.getElementById('edit-title').value;
     const addContenuTextbox = document.getElementById('edit-contenu').value;
     const addPrixTextbox = document.getElementById('edit-prix').value;
-    const addGenreTextbox = document.getElementById('edit-Genre').value;
+    const addGenreTextbox = document.getElementById('edit-Genre');
 
     const item = {
         id: parseInt(itemId, 10),
-        /*isComplete: document.getElementById('edit-isComplete').checked,
-        name: document.getElementById('edit-name').value.trim()*/
-        //id: itemId.value.trim(),
         title: addTitleTextbox.trim(),
         contenu: addContenuTextbox.trim(),
         prix: addPrixTextbox.trim(),
         Genre: [{ "Id": Number(addGenreTextbox.value.trim()), "Nom": addGenreTextbox.options[addGenreTextbox.selectedIndex].text.trim() }]
     };
 
-    fetch(`${uriDelete}/${itemId}`, {
+    fetch(`${uriBook}/${itemId}`, {
         method: 'PUT',
         headers: {
             'Accept': 'application/json',
@@ -158,22 +162,27 @@ function updateItem() {
         .catch(error => console.error('Unable to update item.', error));
     console.log(JSON.stringify(item));
 
-    closeInput();
+    alert('Votre livre a bien ete modifie !');
+    window.location.href = 'index.html';
 
     return false;
 }
 
-function closeInput() {
+// Pour le formulaire de la modification
+ function closeInput() {
     document.getElementById('editForm').style.display = 'none';
 }
 
+// Pour compter le nombre des livres
 function _displayCount(itemCount) {
-    const name = (itemCount === 1) ? 'to-do' : 'to-dos';
+    const name = (itemCount === 1) ? 'livres' : 'livres';
 
     document.getElementById('counter').innerText = `${itemCount} ${name}`;
 }
 
+// Pour l'affichage des livres dans le tableau
 function _displayItems(data) {
+
     const tBody = document.getElementById('todos');
     tBody.innerHTML = '';
 
@@ -182,48 +191,47 @@ function _displayItems(data) {
     const button = document.createElement('button');
 
     data.forEach(item => {
-        let isCompleteCheckbox = document.createElement('input');
-        isCompleteCheckbox.type = 'checkbox';
-        isCompleteCheckbox.disabled = true;
-        isCompleteCheckbox.checked = item.isComplete;
 
         let editButton = button.cloneNode(false);
-        editButton.innerText = 'Edit';
         editButton.setAttribute('onclick', `displayEditForm(${item.Id})`);
+        editButton.classList.add('btn', 'btn-success');
+        editButton.innerHTML = '<i class="fa fa-edit"></i>';
 
         let deleteButton = button.cloneNode(false);
-        deleteButton.innerText = 'Delete';
         deleteButton.setAttribute('onclick', `deleteItem(${item.Id})`);
+        deleteButton.classList.add('btn', 'btn-danger');
+        deleteButton.innerHTML = '<i class="fa fa-trash"></i>';
 
         let tr = tBody.insertRow();
 
-        let td1 = tr.insertCell(0);
-        td1.appendChild(isCompleteCheckbox);
-
-        let td2 = tr.insertCell(1);
+        let td2 = tr.insertCell(0);
         let textNode = document.createTextNode(item.Id);
+        td2.setAttribute("scope", "row");
         td2.appendChild(textNode);
 
-        let td3 = tr.insertCell(2);
+        let td3 = tr.insertCell(1);
         let textNodeTitle = document.createTextNode(item.Title);
         td3.appendChild(textNodeTitle);
 
-        let td4 = tr.insertCell(3);
-        let textNodeContenu = document.createTextNode(item.Contenu);
-        td4.appendChild(textNodeContenu);
+        let td4 = tr.insertCell(2);
+        //let textNodeContenu = document.createTextNode(item.Contenu);
+        var div = document.createElement("div");
+        div.textContent = item.Contenu;
+        div.classList.add("divforcontenu");
+        td4.appendChild(div);
 
-        let td5 = tr.insertCell(4);
+        let td5 = tr.insertCell(3);
         let textNodePrix = document.createTextNode(item.Prix);
         td5.appendChild(textNodePrix);
 
-        let td6 = tr.insertCell(5);
+        let td6 = tr.insertCell(4);
         let textNodeGenre = document.createTextNode(item.Genre[0].Nom);
         td6.appendChild(textNodeGenre);
 
-        let td7 = tr.insertCell(6);
+        let td7 = tr.insertCell(5);
         td7.appendChild(editButton);
 
-        let td8 = tr.insertCell(7);
+        let td8 = tr.insertCell(6);
         td8.appendChild(deleteButton);
 
     });

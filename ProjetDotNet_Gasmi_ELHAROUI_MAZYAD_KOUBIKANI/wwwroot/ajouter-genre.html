@@ -1,15 +1,15 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title>BookService</title>
+    <meta charset="utf-8" />
+    <title>Ajouter un genre</title>
+
     <link rel="stylesheet" href="css/site.css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-
 
 </head>
 <body>
@@ -28,37 +28,31 @@
         </div>
     </nav>
 
-    <div  class="center_div">
-        <div class="page-header">
-            <h1>Liste des livres</h1>
-        </div>
+    <div id="addLivre" class="center_div">
+        <h3>Ajouter un genre</h3>
         <br />
+        <form action="javascript:void(0);" method="POST" onsubmit="addGenre()">
 
-        <p id="counter"></p>
+            <div class="form-group">
+                <label for="IdGenre">ID du genre (Int)</label>
+                <input type="text" class="form-control" id="IdGenre" placeholder="ID du genre (Int)" required>
+            </div>
 
-        <p id="GFG_UP" style="font-size: 15px; font-weight: bold;">
-        </p>
+            <div class="form-group">
+                <label for="nomGenre">nom du genre</label>
+                <input type="text" class="form-control" id="nomGenre" placeholder="nom du genre" required>
+            </div>
 
-        <table class="table table-hover">
-            <tr>
-                <th scope="col">Id</th>
-                <th scope="col">Title</th>
-                <th scope="col">Contenu</th>
-                <th scope="col">Prix</th>
-                <th scope="col">Genre</th>
-                <th scope="col"></th>
-                <th scope="col"></th>
-            </tr>
-            <tbody id="todos"></tbody>
-        </table>
+            <button type="submit" class="btn btn-primary">Ajouter</button>
+        </form>
+    </div>
 
-        </div>
 
-        <script src="js/site.js" asp-append-version="true"></script>
-        <script type="text/javascript">
-            getItems();
-                //getGenres();
-                //afficherGenres();
-        </script>
+    <script src="js/site.js" asp-append-version="true"></script>
+    <script src="js/genres.js" asp-append-version="true"></script>
+    <script type="text/javascript">
+
+    </script>
+
 </body>
 </html>
