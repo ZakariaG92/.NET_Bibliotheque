@@ -7,6 +7,7 @@
         mc:Ignorable="d"
         Title="DetailBook" Height="450" Width="800">
     <StackPanel >
-        <TextBlock x:Name="textBlock" FontSize="16"></TextBlock>
+        <Label Name="title" Content="titre du livre" FontSize="36" FontWeight="Black" Width="335" HorizontalAlignment="Center" VerticalAlignment="Center" ></Label>
+        <TextBlock x:Name="textBlock" FontSize="16" TextWrapping="Wrap" TextAlignment="Justify" Margin="20" Background=" #373736 " Foreground="White"></TextBlock>
     </StackPanel>
 </Window>

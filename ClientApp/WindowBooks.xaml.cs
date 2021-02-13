@@ -86,6 +86,7 @@ namespace ClientApp
             {
                 // this.listView.Items.Add(item);
                 combobox.Items.Add(item.Title);
+                idCombobox.Items.Add(item.Id);
 
 
             }
@@ -94,14 +95,72 @@ namespace ClientApp
 
         }
 
+        public void displayData(List<Book> books)
+        {
+            
+            if (this.listView!=null)  listView.Items.Clear();
+
+            // Initialize
+            this.InitializeComponent();
+
+            // Add columns
+            var gridView = new GridView();
+            
+            this.listView.View = gridView;
+           
+
+            gridView.Columns.Add(new GridViewColumn
+            {
+                Header = "Id",
+                DisplayMemberBinding = new Binding("Id")
+            });
+            gridView.Columns.Add(new GridViewColumn
+            {
+                Header = "Title",
+                DisplayMemberBinding = new Binding("Title")
+            });
+
+       
+
+            gridView.Columns.Add(new GridViewColumn
+            {
+                Header = "Prix",
+                DisplayMemberBinding = new Binding("Prix")
+            });
+
+           for(int i=0; i < books[0].Genre.Count; i++ )
+                gridView.Columns.Add(new GridViewColumn
+                {
+                    Header = $"Genre {i+1}",
+                    DisplayMemberBinding = new Binding($"Genre[{i}].Nom")
+                });
+            
+          
+
+
+            // Populate list
+
+            foreach (Book item in books)
+            {
+                 this.listView.Items.Add(item);
+             
+
+
+            }
+        }
+
 
         private void combobox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             string a = combobox.SelectedItem.ToString();
+            var b = combobox.SelectedIndex;
+
+            idCombobox.SelectedIndex = b;
+            var idItem = idCombobox.SelectedItem;
 
             IEnumerable<Book> filteringQuery =
             from l in Livres
-            where l.Title == a 
+            where l.Id == Int32.Parse(idItem.ToString()) 
             select l;
 
             List<Book> result = filteringQuery.ToList();
@@ -114,10 +173,8 @@ namespace ClientApp
             {
                 gen += $"{genre.Nom}  ";
             }
-            labelPrix.Content = $"Prix : {result[0].Prix}";
-            labelgenre1.Content = gen;
 
-
+            displayData(result);
            
 
 
@@ -133,6 +190,8 @@ namespace ClientApp
             }
           
         }
+
+     
     }
 
 }

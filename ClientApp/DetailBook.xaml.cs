@@ -24,6 +24,7 @@ namespace ClientApp
             this.Book = book;
             InitializeComponent();
 
+            title.Content = book.Title;
             textBlock.Text = book.Contenu;
         }
     }

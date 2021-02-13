@@ -7,14 +7,58 @@
         mc:Ignorable="d"
         Title="WindowBooks" Height="450" Width="800">
     <StackPanel  Loaded="StackPanel_Loaded">
-        <ListBox x:Name="listBoxBooks" Background="Chocolate" ></ListBox>
-        <ListView x:Name="listView"  >
+        <StackPanel.LayoutTransform>
+            <TransformGroup>
+                <ScaleTransform/>
+                <SkewTransform/>
+                <RotateTransform/>
+                <TranslateTransform X="60" Y="60"/>
+            </TransformGroup>
+        </StackPanel.LayoutTransform>
 
-        </ListView>
-        <ComboBox x:Name="combobox" SelectionChanged="combobox_SelectionChanged"></ComboBox>
-        <Label Name="labelPrix" Content="Prix du Livre"/>
-        <Label Name="labelgenre1" Content=""/>
-        <Button x:Name="detailButton" Content="Lire le contenu du livre" Click="detailButton_Click" ></Button>
+        <ComboBox x:Name="combobox" SelectionChanged="combobox_SelectionChanged" Width="190" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Right">
+            <ComboBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform X="-293"/>
+                </TransformGroup>
+            </ComboBox.RenderTransform>
+        </ComboBox>
+
+        <ComboBox x:Name="idCombobox" RenderTransformOrigin="0.5,0.5" Width="45"  Visibility="Hidden">
+            <ComboBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="-1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </ComboBox.RenderTransform>
+        </ComboBox>
+        <ListView x:Name="listView" Height="100" Width="384" HorizontalAlignment="Center"  />
+        <Label x:Name="labelgenre1" Content=""/>
+
+        <ToolBarPanel />
+        <Button x:Name="detailButton" Content="Lire le contenu du livre" Click="detailButton_Click" Height="41" RenderTransformOrigin="0,0.5" Width="124" VerticalAlignment="Bottom" HorizontalAlignment="Right" >
+            <Button.LayoutTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.LayoutTransform>
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.398"/>
+                    <TranslateTransform X="-329.999" Y="0.274405"/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
 
 
 
