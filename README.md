@@ -49,15 +49,15 @@ API REST mis à disposition pour permettre à des clients externes de consulter 
 
 #### Request
 
-       ```bash
-       GET https://localhost:5001/api/Books/all
-       ```
+```bash
+GET https://localhost:5001/api/Books/all
+```
 
 #### Response
 
-       ```json
-       {"Id":1,"Title":"FluconazoleE","Contenu":"nonummy ultricies ornare, elit elit fermentum risus, at fringilla purus mauris a nunc. In at pede. Cras vulputate velit eu sem. Pellentesque ut ipsum ac mi eleifend egestas. Sed pharetra, felis eget varius ultrices, mauris ipsum porta elit, a feugiat tellus lorem eu metus. In lorem. Donec elementum, lorem ut aliquam iaculis, lacus pede sagittis augue, eu tempor erat neque non quam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam fringilla cursus purus. Nullam scelerisque neque sed sem egestas blandit. Nam nulla magna,","Prix":19,"Genre":[{"Id":6,"Nom":"Science"}]},{"Id":2,"Title":"Lorazepam","Contenu":"vehicula. Pellentesque tinc_idunt tempus risus. Donec egestas. Duis ac","Prix":1163,"Genre":[{"Id":5,"Nom":"M\u00E9dicale"}]}....
-       ```
+```json
+{"Id":1,"Title":"FluconazoleE","Contenu":"nonummy ultricies ornare, elit elit fermentum risus, at fringilla purus mauris a nunc. In at pede. Cras vulputate velit eu sem. Pellentesque ut ipsum ac mi eleifend egestas. Sed pharetra, felis eget varius ultrices, mauris ipsum porta elit, a feugiat tellus lorem eu metus. In lorem. Donec elementum, lorem ut aliquam iaculis, lacus pede sagittis augue, eu tempor erat neque non quam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam fringilla cursus purus. Nullam scelerisque neque sed sem egestas blandit. Nam nulla magna,","Prix":19,"Genre":[{"Id":6,"Nom":"Science"}]},{"Id":2,"Title":"Lorazepam","Contenu":"vehicula. Pellentesque tinc_idunt tempus risus. Donec egestas. Duis ac","Prix":1163,"Genre":[{"Id":5,"Nom":"M\u00E9dicale"}]}....
+```
 
 ### Récupérer un livre précis avec son contenu (soit en utilisant son ID, soit son Titre)
 
