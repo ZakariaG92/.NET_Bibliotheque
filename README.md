@@ -88,6 +88,12 @@ GET https://localhost:5001/api/Books/all
        ```json
        {"Id":1,"Title":"FluconazoleE","Contenu":"nonummy ultricies ornare, elit elit fermentum risus, at fringilla purus mauris a nunc. In at pede. Cras vulputate velit eu sem. Pellentesque ut ipsum ac mi eleifend egestas. Sed pharetra, felis eget varius ultrices, mauris ipsum porta elit, a feugiat tellus lorem eu metus. In lorem. Donec elementum, lorem ut aliquam iaculis, lacus pede sagittis augue, eu tempor erat neque non quam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam fringilla cursus purus. Nullam scelerisque neque sed sem egestas blandit. Nam nulla magna,","Prix":19,"Genre":[{"Id":6,"Nom":"Science"}]},{"Id":1000,"Title":"FluconazoleE","Contenu":"nonummy ultricies ornare, elit elit fermentum risus, at fringilla purus mauris a nunc. In at pede. Cras vulputate velit eu sem. Pellentesque ut ipsum ac mi eleifend egestas. Sed pharetra, felis eget varius ultrices, mauris ipsum porta elit, a feugiat tellus lorem eu metus. In lorem. Donec elementum, lorem ut aliquam iaculis, lacus pede sagittis augue, eu tempor erat neque non quam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam fringilla cursus purus. Nullam scelerisque neque sed sem egestas blandit. Nam nulla magna,","Prix":19,"Genre":[{"Id":6,"Nom":"Science"}]},{"Id":1500,"Title":"FluconazoleE","Contenu":"nonummy ultricies ornare, elit elit fermentum risus, at fringilla purus mauris a nunc. In at pede. Cras vulputate velit eu sem. Pellentesque ut ipsum ac mi eleifend egestas. Sed pharetra, felis eget varius ultrices, mauris ipsum porta elit, a feugiat tellus lorem eu metus. In lorem. Donec elementum, lorem ut aliquam iaculis, lacus pede sagittis augue, eu tempor erat neque non quam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam fringilla cursus purus. Nullam scelerisque neque sed sem egestas blandit. Nam nulla magna,","Prix":19,"Genre":[{"Id":6,"Nom":"Science"},{"Id":2,"Nom":"Biographie"}]}
        ```
+### Ajouter un livre
+
+### Modifier un livre
+
+### Suprimer un livre
+
 
 ## Administration
 
@@ -95,4 +101,16 @@ GET https://localhost:5001/api/Books/all
 
   * Interface web **affiche la liste des genres** et permet de **MODIFIER**, **AJOUTER** ou **SUPPRIMER** un genre
 
+## WPF - Application client lourd
 
+  * Récupérer les donnnées de l'api livres et genres
+
+  * Afficher la liste de livres avec la possibilité de selectionner de livres
+
+  * Afficher les détails d'un livre selectionné 
+
+  * Lire les contenus d'un livre selectionné 
+
+  * Afficher la liste de tous les genres et selectionner de genres
+
+  * Afficher de livres en fonction de genres
