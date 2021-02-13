@@ -7,14 +7,42 @@
         xmlns:ViewModel="clr-namespace:ClientApp.ViewModel"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-           
-            <StackPanel >
-        <Label Content="Client lourd"></Label>
-        <TextBox x:Name="txtBox" ></TextBox>
-        <Button x:Name="btn" Content="Click here" Click="btn_Click" ></Button>
-        <!--    <ListBox x:Name="lb" ></ListBox> -->
-        <Button x:Name="btnBook" Content="list book" Click="btnB_Click" ></Button>
-        <Button x:Name="btnGenre" Content="liste genre" Click="btnG_Click" ></Button>
+
+    <StackPanel Opacity="0.985" Background="#FF1B1919" >
+        <StackPanel Orientation="Vertical" Width="400" Height="197" Margin="0,50,0,0">
+            <Image Source="/img/books.png" Name="imgBooks" Width="250" Visibility="Visible" ></Image>
+        </StackPanel>
+        <StackPanel x:Name="panelButtons" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="50,10,50,50" Width="500" Height="98" SnapsToDevicePixels="True" RenderTransformOrigin="0.5,0.5">
+            <StackPanel.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform Y="50"/>
+                </TransformGroup>
+            </StackPanel.RenderTransform>
+            <StackPanel.Effect>
+                <DropShadowEffect/>
+            </StackPanel.Effect>
+
+            <Button x:Name="btnBook" Content="Livres" Click="btnB_Click" HorizontalAlignment="Left" Height="70" VerticalAlignment="Center" Width="150" Margin="10,0,0,0" Background="#FF383737" BorderBrush="Black" Panel.ZIndex="-4" FontFamily="Calibri" FontWeight="Bold" FontSize="22" FontStyle="Normal" Foreground="#FFFFFBFB" Cursor="Hand" ></Button>
+            <Button x:Name="btnGenre" Content="Genres" Click="btnG_Click" HorizontalAlignment="Right" Height="70" Width="150" Margin="10,0,0,0" RenderTransformOrigin="0.5,0.5" BorderBrush="Black" Panel.ZIndex="-4" FontFamily="Calibri" FontWeight="Bold" FontSize="22" FontStyle="Normal" Foreground="#FFFFFBFB" Background="#FF383737" Cursor="Hand" >
+                <Button.Effect>
+                    <DropShadowEffect/>
+                </Button.Effect>
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform X="170"/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+                
+            </Button>
+        </StackPanel>
+
+
 
 
 

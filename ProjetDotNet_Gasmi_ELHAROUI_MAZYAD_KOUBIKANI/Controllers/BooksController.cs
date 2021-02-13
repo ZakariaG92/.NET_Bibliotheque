@@ -87,7 +87,7 @@ namespace ProjetDotNet_Gasmi_ELHAROUI_MAZYAD_KOUBIKANI.Controllers
         }
 
 
-        // GET api/<BooksController>/test
+        // GET api/<BooksController>/genre/id
         [HttpGet("genre/{id}")]
         public string GetByGenre(int id)
         {
