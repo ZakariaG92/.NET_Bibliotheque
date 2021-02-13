@@ -90,7 +90,35 @@ GET https://localhost:5001/api/Books/all
        ```
 ### Ajouter un livre
 
+
+#### Request
+
+
+
 ### Modifier un livre
+
+#### Request
+
+```bash
+PUT https://localhost:44310/api/books/3
+```
+
+#### Body - row - Json
+
+       ```json
+          {    
+               "id":3,
+               "title": "test",
+               "contenu": "this is test",
+          "prix":30,
+          "genre":[{
+               "id":20,
+               "nom": "Biographie"   
+          }]
+          }
+       ```
+
+
 
 ### Suprimer un livre
 
