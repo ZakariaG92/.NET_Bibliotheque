@@ -92,7 +92,24 @@ GET https://localhost:5001/api/Books/all
 
 
 #### Request
+```bash
+POST https://localhost:44310/api/books
+```
 
+#### Body - row - Json
+
+       ```json
+          {    
+               "id":441,
+               "title": "testPost",
+               "contenu": "this is test Post",
+          "prix":380,
+          "genre":[{
+               "id":20,
+               "nom": "Biographie"   
+          }]
+          }
+       ```
 
 
 ### Modifier un livre
