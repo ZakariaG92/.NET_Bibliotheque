@@ -50,7 +50,7 @@ API REST mis à disposition pour permettre à des clients externes de consulter 
 #### Request
 
        ```bash
-       GET https://localhost:5001/api/Books/all
+       https://localhost:5001/api/Books/all
        ```
 
 #### Response
