@@ -93,6 +93,6 @@ GET https://localhost:5001/api/Books/all
 
   * Interface web **affiche la liste des livres** et permet de **CONSULTER LES DETAILS** d'un livre, **MODIFIER**, **AJOUTER** ou **SUPPRIMER** un livre disponible dans la bibliothèque
 
-  * Interface web **affiche la liste des genres** et permet de **CONSULTER LES DETAILS** d'un genre, **MODIFIER**, **AJOUTER** ou **SUPPRIMER** un genre
+  * Interface web **affiche la liste des genres** et permet de **MODIFIER**, **AJOUTER** ou **SUPPRIMER** un genre
 
 
