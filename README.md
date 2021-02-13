@@ -122,6 +122,13 @@ PUT https://localhost:44310/api/books/3
 
 ### Suprimer un livre
 
+#### Request
+
+```bash
+DELETE https://localhost:44310/api/books/3
+```
+
+
 
 ## Administration
 
