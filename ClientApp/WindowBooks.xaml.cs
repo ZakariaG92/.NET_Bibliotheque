@@ -44,47 +44,9 @@ namespace ClientApp
            this.Livres = book;
 
           
-/*
-
-            // Initialize
-            this.InitializeComponent();
-
-            // Add columns
-            var gridView = new GridView();
-            
-            this.listView.View = gridView;
-           
-
-            gridView.Columns.Add(new GridViewColumn
-            {
-                Header = "Id",
-                DisplayMemberBinding = new Binding("Id")
-            });
-            gridView.Columns.Add(new GridViewColumn
-            {
-                Header = "Title",
-                DisplayMemberBinding = new Binding("Title")
-            });
-
-            gridView.Columns.Add(new GridViewColumn
-            {
-                Header = "Contenu",
-                DisplayMemberBinding = new Binding("Contenu")
-            });
-
-            gridView.Columns.Add(new GridViewColumn
-            {
-                Header = "Prix",
-                DisplayMemberBinding = new Binding("Prix")
-            });
-
-            */
-
-            // Populate list
 
             foreach (Book item in book)
             {
-                // this.listView.Items.Add(item);
                 combobox.Items.Add(item.Title);
                 idCombobox.Items.Add(item.Id);
 

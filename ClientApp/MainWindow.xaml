@@ -14,7 +14,7 @@
         <Button x:Name="btn" Content="Click here" Click="btn_Click" ></Button>
         <!--    <ListBox x:Name="lb" ></ListBox> -->
         <Button x:Name="btnBook" Content="list book" Click="btnB_Click" ></Button>
-        <Button x:Name="btnGenre" Content="liste genre" Click="btn_Click" ></Button>
+        <Button x:Name="btnGenre" Content="liste genre" Click="btnG_Click" ></Button>
 
 
 

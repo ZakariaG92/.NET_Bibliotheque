@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using MongoDB.Driver.Linq;
 using System.Text.Json;
+using System.Linq;
 
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -79,6 +80,52 @@ namespace ProjetDotNet_Gasmi_ELHAROUI_MAZYAD_KOUBIKANI.Controllers
             {
                 listBooks.Add(books);
             }
+
+            string jsonString = JsonSerializer.Serialize(listBooks);
+
+            return jsonString;
+        }
+
+
+        // GET api/<BooksController>/test
+        [HttpGet("genre/{id}")]
+        public string GetByGenre(int id)
+        {
+            IMongoCollection<Book> collection = MongoConn.getCollectionBooks();
+
+       
+            var query =
+            from e in collection.AsQueryable<Book>()
+            where e.Genre[0].Id == id
+            select e;
+
+            List<Book> listBooks = new List<Book>();
+            foreach (var books in query)
+            {
+                listBooks.Add(books);
+            }
+
+
+            try
+            {
+            var query2 =
+            from e in collection.AsQueryable<Book>()
+            where e.Genre[1].Id == id
+            select e;
+
+                foreach (var books2 in query2)
+                {
+                    listBooks.Add(books2);
+                }
+
+            } 
+            catch(Exception e)
+            {
+
+            }
+
+            //List<Book> listBooks2 = listBooks.Distinct();
+
 
             string jsonString = JsonSerializer.Serialize(listBooks);
 

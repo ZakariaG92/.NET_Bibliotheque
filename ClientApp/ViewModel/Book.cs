@@ -48,5 +48,17 @@ namespace ClientApp.ViewModel
             List<Book> book = JsonConvert.DeserializeObject<List<Book>>(response);
             return book;
         }
+
+        public static async Task<List<Book>> getByGenreId(int id)
+        {
+
+            string response = await Api.getRequest($"Books/genre/{id}");
+
+            List<Book> book = JsonConvert.DeserializeObject<List<Book>>(response);
+            return book;
+
+
+
+        }
     }
 }

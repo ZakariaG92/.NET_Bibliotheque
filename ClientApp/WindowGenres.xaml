@@ -6,7 +6,17 @@
         xmlns:local="clr-namespace:ClientApp"
         mc:Ignorable="d"
         Title="WindowGenres" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+    <StackPanel x:Name="mainStackPanel" Loaded="mainStackPanel_Loaded">
+        <ComboBox x:Name="idGenres" Height="28" Width="40" Visibility="Hidden"></ComboBox>
+        <ComboBox x:Name="idBooks" Height="28" Width="40" Visibility="Hidden"></ComboBox>
+
+        <StackPanel Orientation="Horizontal" Height="100" Width="605" Margin="10,20,10,20">
+            <ComboBox Name="listGenres" Width="243" Height="44" Margin="20,0,20,0"  SelectionChanged="listGenres_SelectionChanged" ></ComboBox>
+            <ComboBox x:Name="listBooks" Width="243" Height="44" Margin="20,0,20,0" SelectionChanged="listBooks_SelectionChanged" />
+        </StackPanel>
+        <StackPanel Orientation="Vertical" Margin="30,0,30,0" Height="100" Width="585" >
+            <ListView x:Name="listView" Height="51" VerticalAlignment="Center" HorizontalAlignment="Center" Width="540" Visibility="Hidden" > </ListView>
+            <Button x:Name="detail" Content="Lire le contenu" Height="30" Width="172" Margin="10,20,10,10" VerticalAlignment="Center" HorizontalAlignment="Center" Visibility="Hidden" Click="detail_Click"></Button>
+        </StackPanel>
+    </StackPanel>
 </Window>
