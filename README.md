@@ -33,14 +33,15 @@ Atlas MongoDb en ligne (Tout est déjà configuré pour la communication avec la
 
   * Exemple JSON d'un livre avec un seul genre
 
-        ;;;
-        {"Id":1,"Title":"FluconazoleE","Contenu":"nonummy ultricies ...","Prix":19,"Genre":[{"Id":6,"Nom":"Science"}]}
-        ;;;
+       ```json
+       {"Id":1,"Title":"FluconazoleE","Contenu":"nonummy ultricies ...","Prix":19,"Genre":[{"Id":6,"Nom":"Science"}]}
+       ```
+        
   
   * Exemple JSON d'un livre avec plusieurs genres
 
-        ;;;
-  {"Id":1500,"Title":"FluconazoleE","Contenu":"nsenectus et ...","Prix":19,"Genre":[{"Id":6,"Nom":"Science"},{"Id":2,"Nom":"Biographie"}]}
-          ;;;
+       
+       {"Id":1500,"Title":"FluconazoleE","Contenu":"nsenectus et ...","Prix":19,"Genre":[{"Id":6,"Nom":"Science"},{"Id":2,"Nom":"Biographie"}]}
+      
 
 
