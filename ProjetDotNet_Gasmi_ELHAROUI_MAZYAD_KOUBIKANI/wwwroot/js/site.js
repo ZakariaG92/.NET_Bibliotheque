@@ -80,13 +80,29 @@ function addItem() {
     const addPrixTextbox = document.getElementById('Prix');
     const addGenreTextbox = document.getElementById('selectGenre');
 
+
+    // On va recupérer les choix multiples de Genres
+    let GenreChoix = []
+    for (var i = 0; i < addGenreTextbox.options.length; i++) {
+        if (addGenreTextbox.options[i].selected) {
+            let result = {};
+            result["id"] = addGenreTextbox.options[i].value;
+            result["Nom"] = addGenreTextbox.options[i].text.trim();
+            GenreChoix.push(result);
+        }
+    }
+
+    /*GenreChoix.forEach(function (item, index, array) {
+        console.log(item, index);
+    });*/
+
     const item = {
-        
+
         id: Number(addIdTextbox.value.trim()),
         title: addTitleTextbox.value.trim(),
         contenu: addContenuTextbox.value.trim(),
         prix: Number(addPrixTextbox.value.trim()),
-        Genre: [{ "Id": Number(addGenreTextbox.value.trim()), "Nom": addGenreTextbox.options[addGenreTextbox.selectedIndex].text.trim() }]
+        Genre: GenreChoix
     };
 
     fetch(uriBook, {
@@ -100,12 +116,12 @@ function addItem() {
         .then(response => response.json())
         .then(() => {
             getItems();
-            addNameTextbox.value = '';
         })
         .catch(error => console.error('Unable to add item.', error));
 
-        alert('Votre livre a bien ete ajoute !');
-        window.location.href = 'liste-livres.html';
+    console.log(JSON.stringify(item));
+     alert('Votre livre a bien ete ajoute !');
+     window.location.href = 'liste-livres.html';
 
 }
 
