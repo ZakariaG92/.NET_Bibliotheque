@@ -95,4 +95,16 @@ GET https://localhost:5001/api/Books/all
 
   * Interface web **affiche la liste des genres** et permet de **MODIFIER**, **AJOUTER** ou **SUPPRIMER** un genre
 
+## WPF - Application client lourd
 
+  * Récupérer les donnnées de l'api livres et genres
+
+  * Afficher la liste de livres avec la possibilité de selectionner de livres
+
+  * Afficher les détails d'un livre selectionné 
+
+  * Lire les contenus d'un livre selectionné 
+
+  * Afficher la liste de tous les genres et selectionner de genres
+
+  * Afficher de livres en fonction de genres
