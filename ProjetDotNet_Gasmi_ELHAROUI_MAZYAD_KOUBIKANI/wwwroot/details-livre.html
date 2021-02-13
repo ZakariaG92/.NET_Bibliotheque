@@ -68,9 +68,15 @@
             </div>
 
             <div class="form-group">
-                <label for="edit-Genre">Genre</label>
-                <input type="text" class="form-control" readonly id="edit-Genre" placeholder="Genre" required>
+                <label for="liste-genres">Genres du livre</label>
+                <input type="text" class="form-control" readonly id="liste-genres">
             </div>
+
+            <!-- <div class="form-group">
+         <label for="edit-Genre">Genre</label>
+         <input type="text" class="form-control" readonly id="edit-Genre" placeholder="Genre" required>
+     </div>-->
+
         </form>
 
         <button class="btn btn-warning" onclick="versEditForm();">Modifier ce livre</button>
@@ -101,7 +107,7 @@
         document.getElementById('edit-title').value = title;
         document.getElementById('edit-contenu').value = contenu;
         document.getElementById('edit-prix').value = prix;
-        document.getElementById('edit-Genre').value = genre;
+        document.getElementById('liste-genres').value = genre;
         /*const genreTextbox = document.getElementById('edit-Genre').value;
         genreTextbox.options[genreTextbox.selectedIndex].text = item.Genre[0].Nom;*/
         document.getElementById('editForm').style.display = 'block';

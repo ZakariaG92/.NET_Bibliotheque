@@ -58,6 +58,13 @@ function deleteItem(id) {
     }
 }
 
+// Pour compter le nombre des genres
+function _displayCountGenre(itemCount) {
+    const name = (itemCount === 1) ? 'genres' : 'genres';
+
+    document.getElementById('counter').innerText = `${itemCount} ${name}`;
+}
+
 // Modifier un genre
 function displayEditForm(id) {
 
@@ -103,7 +110,7 @@ function _displayGenres(data) {
     const tBody = document.getElementById('todos');
     tBody.innerHTML = '';
 
-    _displayCount(data.length);
+    _displayCountGenre(data.length);
 
     const button = document.createElement('button');
 

@@ -49,7 +49,7 @@
 
             <div class="form-group">
                 <label for="edit-id">Réference de livre (Int)</label>
-                <input type="text" class="form-control" readonly id="edit-id" placeholder="Réference de livre (Int)" required>
+                <input type="text" class="form-control" readonly id="edit-id" required>
             </div>
 
             <div class="form-group">
@@ -68,10 +68,16 @@
             </div>
 
             <div class="form-group">
+                <label for="liste-genres">Genres du livre</label>
+                <input type="text" class="form-control" readonly id="liste-genres">
+            </div>
+
+            <div class="form-group">
                 <label for="edit-Genre">Genre : (vous pouvez choisir plusieurs CTRL+click droit)</label>
                 <select multiple id="edit-Genre" class="form-control" required>
                     <option value="">Choisissez un genre</option>
                 </select>
+                <label style="color:red" for="edit-Genre">!! Les genres sont déjà selectionnés, oubliez pas de les garder sinon ...</label>
             </div>
 
             <button type="submit" class="btn btn-primary">Modifier</button>
@@ -105,10 +111,28 @@
         document.getElementById('edit-title').value = title;
         document.getElementById('edit-contenu').value = contenu;
         document.getElementById('edit-prix').value = prix;
-        document.getElementById('edit-Genre').text = genre;
+        document.getElementById('liste-genres').value = genre;
         /*const genreTextbox = document.getElementById('edit-Genre').value;
         genreTextbox.options[genreTextbox.selectedIndex].text = item.Genre[0].Nom;*/
+
+        // On va recupérer les genres et selectionné ça dans le <Select>
+        function getGenresSelected() {
+            // setTimeout, le temps de remplir le <select> par le Get avant de tester ces <option>
+            setTimeout(function () {
+                const addGenreTextbox = document.getElementById('edit-Genre');
+                for (var i = 0; i < addGenreTextbox.options.length; i++) {
+
+                    if (genre.includes(addGenreTextbox.options[i].text.trim())) {
+                        addGenreTextbox.options[i].selected = true;
+                        console.log(addGenreTextbox.options[i].text.trim());
+                    }
+                }
+            }, 1000);
+        }
+
         document.getElementById('editForm').style.display = 'block';
+
+        getGenresSelected();
 
 
     </script>

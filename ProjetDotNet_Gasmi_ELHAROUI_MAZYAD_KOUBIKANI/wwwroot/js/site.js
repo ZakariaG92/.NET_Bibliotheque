@@ -145,8 +145,15 @@ function displayDetail(id) {
 
     const item = todos.find(item => item.Id === id);
 
+    let listeGenre = "";
+    for (var i = 0; i < item.Genre.length; i++) {
+        listeGenre += item.Genre[i].Nom + " - ";
+    }
+
+    const listeGenres = listeGenre.slice(0, -2);
+
     // On passe les params en URL
-    window.location.href = 'details-livre.html?id=' + item.Id + '&title=' + item.Title + '&contenu=' + item.Contenu + '&prix=' + item.Prix + '&genre=' + item.Genre[0].Nom;
+    window.location.href = 'details-livre.html?id=' + item.Id + '&title=' + item.Title + '&contenu=' + item.Contenu + '&prix=' + item.Prix + '&genre=' + listeGenres;
 
 }
 
@@ -159,8 +166,15 @@ function displayEditForm(id) {
 
     const item = todos.find(item => item.Id === id);
 
+    let listeGenre = "";
+    for (var i = 0; i < item.Genre.length; i++) {
+        listeGenre += item.Genre[i].Nom + " - ";
+    }
+
+    const listeGenres = listeGenre.slice(0, -2);
+
     // On passe les params en URL
-    window.location.href = 'modifier-livre.html?id=' + item.Id + '&title=' + item.Title + '&contenu=' + item.Contenu + '&prix=' + item.Prix + '&genre=' + item.Genre[0].Nom;
+    window.location.href = 'modifier-livre.html?id=' + item.Id + '&title=' + item.Title + '&contenu=' + item.Contenu + '&prix=' + item.Prix + '&genre=' + listeGenres;
 
 }
 
@@ -210,6 +224,7 @@ function updateItem() {
 
     alert('Votre livre a bien ete modifie !');
     window.location.href = 'liste-livres.html';
+    //displayDetail(itemId);
 
     return false;
 }
@@ -280,8 +295,9 @@ function _displayItems(data) {
         let listeGenres = "";
         for (var i = 0; i < item.Genre.length; i++)
         {
-            listeGenres +=  item.Genre[i].Nom + "-";
+            listeGenres +=  item.Genre[i].Nom + "  ";
         }
+        //const listeGenres = listeGenre.slice(0, -2);
         let textNodeGenre = document.createTextNode(listeGenres);
         td6.appendChild(textNodeGenre);
 
