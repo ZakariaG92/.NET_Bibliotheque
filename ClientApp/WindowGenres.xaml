@@ -7,6 +7,19 @@
         mc:Ignorable="d"
         Title="WindowGenres" Height="450" Width="800">
     <StackPanel x:Name="mainStackPanel" Loaded="mainStackPanel_Loaded" Background="#FF1B1919">
+        <Button x:Name="home" Width="50" Height="46" RenderTransformOrigin="0.5,0.5" Click="home_Click" >
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform X="-350"/>
+                </TransformGroup>
+            </Button.RenderTransform>
+            <Button.Background>
+                <ImageBrush ImageSource="img/home.png" Stretch="Fill" />
+            </Button.Background>
+        </Button>
         <ComboBox x:Name="idGenres" Height="28" Width="40" Visibility="Hidden"></ComboBox>
         <ComboBox x:Name="idBooks" Height="28" Width="40" Visibility="Hidden"></ComboBox>
 
@@ -42,7 +55,7 @@
                 </TransformGroup>
             </StackPanel.RenderTransform>
             <ComboBox Name="paging" Width="40" AutomationProperties.ItemType="" RenderTransformOrigin="0.5,0.5" SelectionChanged="paging_SelectionChanged" Height="44" >
-             
+
             </ComboBox>
             <ComboBox Name="listGenres" Text="livre" Width="243" Height="44" Margin="20,0,20,0"  SelectionChanged="listGenres_SelectionChanged" ScrollViewer.CanContentScroll="False" FontFamily="Calibri" FontWeight="Bold" FontSize="16" Cursor="Hand" >
                 <ComboBox.Background>
@@ -79,7 +92,7 @@
                         <ScaleTransform/>
                         <SkewTransform/>
                         <RotateTransform/>
-                        <TranslateTransform Y="70"/>
+                        <TranslateTransform Y="40"/>
                     </TransformGroup>
                 </Button.RenderTransform>
             </Button>

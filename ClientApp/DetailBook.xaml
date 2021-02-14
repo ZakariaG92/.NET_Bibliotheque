@@ -7,16 +7,37 @@
         mc:Ignorable="d"
         Title="DetailBook" Height="450" Width="800">
     <StackPanel Background="#FF1B1919">
+        <Button x:Name="home" Width="50" Height="46" RenderTransformOrigin="0.5,0.5" Click="home_Click_1" >
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform X="-350"/>
+                </TransformGroup>
+            </Button.RenderTransform>
+            <Button.Background>
+                <ImageBrush ImageSource="img/home.png" Stretch="Fill" />
+            </Button.Background>
+        </Button>
         <Label Name="title" Content="titre du livre" FontSize="48" FontWeight="Bold" Width="335"  Foreground="White" RenderTransformOrigin="0.5,0.5" FontFamily="Calibri" >
             <Label.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
                     <SkewTransform/>
                     <RotateTransform/>
-                    <TranslateTransform X="60"/>
+                    <TranslateTransform X="40" Y="-40"/>
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
-        <TextBlock x:Name="textBlock" FontSize="22" TextWrapping="Wrap" TextAlignment="Justify" Margin="20" Background="#FF1B1919" Foreground="White" Height="306" FontFamily="Edwardian Script ITC"></TextBlock>
+        <TextBlock x:Name="textBlock" FontSize="22" TextWrapping="Wrap" TextAlignment="Justify" Margin="20" Background="#FF1B1919" Foreground="White" Height="306" FontFamily="Edwardian Script ITC" RenderTransformOrigin="0.5,0.5">
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform Y="-30"/>
+                </TransformGroup>
+            </TextBlock.RenderTransform></TextBlock>
     </StackPanel>
 </Window>

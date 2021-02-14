@@ -16,13 +16,27 @@
             </TransformGroup>
         </StackPanel.LayoutTransform>
 
+        <Button x:Name="home" Width="50" Height="46" RenderTransformOrigin="0.5,0.5" Click="home_Click" >
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform X="-350"/>
+                </TransformGroup>
+            </Button.RenderTransform>
+            <Button.Background>
+                <ImageBrush ImageSource="img/home.png" Stretch="Fill" />
+            </Button.Background>
+        </Button>
+
         <StackPanel Orientation="Vertical" Width="500" RenderTransformOrigin="0.5,0.5">
             <StackPanel.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
                     <SkewTransform/>
                     <RotateTransform/>
-                    <TranslateTransform Y="100"/>
+                    <TranslateTransform Y="50"/>
                 </TransformGroup>
             </StackPanel.RenderTransform>
             <StackPanel Orientation="Horizontal">
@@ -83,7 +97,7 @@
                     <ScaleTransform/>
                     <SkewTransform/>
                     <RotateTransform Angle="0.398"/>
-                    <TranslateTransform X="-280" Y="150"/>
+                    <TranslateTransform X="-280" Y="100"/>
                 </TransformGroup>
             </Button.RenderTransform>
         </Button>

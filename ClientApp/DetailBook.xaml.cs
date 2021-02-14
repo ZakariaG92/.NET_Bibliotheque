@@ -27,5 +27,14 @@ namespace ClientApp
             title.Content = book.Title;
             textBlock.Text = book.Contenu;
         }
+
+
+        private void home_Click_1(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+            Window main= Application.Current.MainWindow;
+            var a =   Application.Current.Windows;
+            main.Show();
+        }
     }
 }

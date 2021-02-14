@@ -197,5 +197,13 @@ namespace ClientApp
 
             var cbx = await fillsComboboxGenre(pseize);
         }
+
+        private void home_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+            Window main = Application.Current.MainWindow;
+            var a = Application.Current.Windows;
+            main.Show();
+        }
     }
 }
