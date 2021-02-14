@@ -4,6 +4,7 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
@@ -42,11 +43,25 @@ namespace ClientApp.ViewModel
 
         }
 
-        public static async Task<List<Book>> getAllAsync()
+        public static async Task<List<Book>> getAllAsync(int pSeize = 0)
         {  
             string response = await Api.getRequest("Books/all");
             List<Book> book = JsonConvert.DeserializeObject<List<Book>>(response);
-            return book;
+            if (pSeize==0)
+            {
+                return book;
+            }
+            else
+            {
+                var sorted = book.Take(pSeize);
+                List<Book> sortedBook = new List<Book>();
+                foreach (Book b in sorted)
+                {
+                    sortedBook.Add(b);
+                }
+                return sortedBook;
+            }
+          
         }
 
         public static async Task<List<Book>> getByGenreId(int id)

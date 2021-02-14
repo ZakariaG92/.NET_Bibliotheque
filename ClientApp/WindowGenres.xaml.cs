@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -29,9 +30,11 @@ namespace ClientApp
             InitializeComponent();
         }
 
-        private async void mainStackPanel_Loaded(object sender, RoutedEventArgs e)
+        public async Task<int> fillsComboboxGenre(int pseize=0)
         {
-            List<Genre> genre = await Genre.getAllAsync();
+            listGenres.Items.Clear();
+            idGenres.Items.Clear();
+            List<Genre> genre = await Genre.getAllAsync(pseize);
 
             this.Genres = genre;
 
@@ -45,6 +48,20 @@ namespace ClientApp
 
             }
 
+            return 0;
+        }
+        private async void mainStackPanel_Loaded(object sender, RoutedEventArgs e)
+        {
+            paging.Items.Add("Seize");
+            paging.Items.Add(2);
+            paging.Items.Add(5);
+            paging.Items.Add(10);
+            paging.Items.Add(15);
+            paging.Items.Add(20);
+
+            paging.SelectedIndex = 0;
+
+            var a = await fillsComboboxGenre();
 
         }
 
@@ -163,6 +180,22 @@ namespace ClientApp
                 DetailBook detail = new DetailBook(this.Livre);
                 detail.Show();
             }
+        }
+
+        private async void paging_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            int pseize;
+            string a = paging.SelectedItem.ToString();
+            if (a == "Seize")
+            {
+                pseize = 0;
+            }
+            else
+            {
+                pseize = int.Parse(a);
+            }
+
+            var cbx = await fillsComboboxGenre(pseize);
         }
     }
 }

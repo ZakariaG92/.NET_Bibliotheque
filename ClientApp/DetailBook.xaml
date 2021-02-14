@@ -6,8 +6,17 @@
         xmlns:local="clr-namespace:ClientApp"
         mc:Ignorable="d"
         Title="DetailBook" Height="450" Width="800">
-    <StackPanel Background="#373736 " >
-        <Label Name="title" Content="titre du livre" FontSize="36" FontWeight="Black" Width="335" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" ></Label>
-        <TextBlock x:Name="textBlock" FontSize="16" TextWrapping="Wrap" TextAlignment="Justify" Margin="20" Background=" #373736 " Foreground="White"></TextBlock>
+    <StackPanel Background="#FF1B1919">
+        <Label Name="title" Content="titre du livre" FontSize="48" FontWeight="Bold" Width="335"  Foreground="White" RenderTransformOrigin="0.5,0.5" FontFamily="Calibri" >
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform X="60"/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <TextBlock x:Name="textBlock" FontSize="22" TextWrapping="Wrap" TextAlignment="Justify" Margin="20" Background="#FF1B1919" Foreground="White" Height="306" FontFamily="Edwardian Script ITC"></TextBlock>
     </StackPanel>
 </Window>

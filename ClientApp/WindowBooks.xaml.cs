@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -32,18 +33,19 @@ namespace ClientApp
 
 
 
-
- 
-
-     
-
-        private async void StackPanel_Loaded(object sender, RoutedEventArgs e)
+        public async Task<string> fillComboboxBooks(int pseize=0)
         {
-           List<Book> book = await Book.getAllAsync();
+            
+            combobox.Items.Clear();
+            idCombobox.Items.Clear();
 
-           this.Livres = book;
+            
 
-          
+            List<Book> book = await Book.getAllAsync(pseize);
+
+            this.Livres = book;
+
+
 
             foreach (Book item in book)
             {
@@ -52,8 +54,23 @@ namespace ClientApp
 
 
             }
-            
 
+            return null;
+        }
+
+
+
+
+        private async void StackPanel_Loaded(object sender, RoutedEventArgs e)
+        {
+            paging.Items.Add("Seize");
+            paging.Items.Add(2);
+            paging.Items.Add(5);
+            paging.Items.Add(10);
+            paging.Items.Add(15);
+            paging.Items.Add(20);
+
+            var a = await fillComboboxBooks();
 
         }
 
@@ -153,7 +170,21 @@ namespace ClientApp
           
         }
 
-     
+        private async void  paging_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            int pseize;
+            string a = paging.SelectedItem.ToString();
+            if (a == "Seize")
+            {
+                pseize = 0;
+            }
+            else
+            {
+                pseize = int.Parse(a);
+            }
+
+           var cbx = await fillComboboxBooks(pseize);
+        }
     }
 
 }

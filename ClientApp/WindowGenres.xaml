@@ -6,17 +6,83 @@
         xmlns:local="clr-namespace:ClientApp"
         mc:Ignorable="d"
         Title="WindowGenres" Height="450" Width="800">
-    <StackPanel x:Name="mainStackPanel" Loaded="mainStackPanel_Loaded">
+    <StackPanel x:Name="mainStackPanel" Loaded="mainStackPanel_Loaded" Background="#FF1B1919">
         <ComboBox x:Name="idGenres" Height="28" Width="40" Visibility="Hidden"></ComboBox>
         <ComboBox x:Name="idBooks" Height="28" Width="40" Visibility="Hidden"></ComboBox>
 
-        <StackPanel Orientation="Horizontal" Height="100" Width="605" Margin="10,20,10,20">
-            <ComboBox Name="listGenres" Width="243" Height="44" Margin="20,0,20,0"  SelectionChanged="listGenres_SelectionChanged" ></ComboBox>
-            <ComboBox x:Name="listBooks" Width="243" Height="44" Margin="20,0,20,0" SelectionChanged="listBooks_SelectionChanged" />
+        <StackPanel Orientation="Horizontal"  Width="605" Margin="20,5,20,5">
+            <Label Content="choisissez un Genre" Foreground="#FFFFFDFD" RenderTransformOrigin="0.5,0.5" FontFamily="Calibri" FontWeight="Normal" FontSize="20">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform X="70"/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+            <Label Content="choisissez un Livre" Foreground="#FFFFFDFD" FontFamily="Calibri" FontWeight="Normal" FontSize="20" RenderTransformOrigin="0.5,0.5">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform X="210"/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
         </StackPanel>
-        <StackPanel Orientation="Vertical" Margin="30,0,30,0" Height="100" Width="585" >
-            <ListView x:Name="listView" Height="51" VerticalAlignment="Center" HorizontalAlignment="Center" Width="540" Visibility="Hidden" > </ListView>
-            <Button x:Name="detail" Content="Lire le contenu" Height="30" Width="172" Margin="10,20,10,10" VerticalAlignment="Center" HorizontalAlignment="Center" Visibility="Hidden" Click="detail_Click"></Button>
+        <StackPanel Orientation="Horizontal" Height="100" Width="605" Margin="10,20,10,20" RenderTransformOrigin="0.5,0.5">
+            <StackPanel.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform X="20" Y="-30"/>
+                </TransformGroup>
+            </StackPanel.RenderTransform>
+            <ComboBox Name="paging" Width="40" AutomationProperties.ItemType="" RenderTransformOrigin="0.5,0.5" SelectionChanged="paging_SelectionChanged" Height="44" >
+             
+            </ComboBox>
+            <ComboBox Name="listGenres" Text="livre" Width="243" Height="44" Margin="20,0,20,0"  SelectionChanged="listGenres_SelectionChanged" ScrollViewer.CanContentScroll="False" FontFamily="Calibri" FontWeight="Bold" FontSize="16" Cursor="Hand" >
+                <ComboBox.Background>
+                    <LinearGradientBrush EndPoint="0,1">
+                        <GradientStop Color="#FFF0F0F0"/>
+                        <GradientStop Color="#FF0A0000" Offset="1"/>
+                    </LinearGradientBrush>
+                </ComboBox.Background>
+            </ComboBox>
+            <ComboBox x:Name="listBooks" Width="243" Height="44" Margin="20,0,20,0" SelectionChanged="listBooks_SelectionChanged" FontFamily="Calibri" FontWeight="Bold" FontSize="16" Cursor="Hand" />
+        </StackPanel>
+        <StackPanel Orientation="Vertical" Margin="30,0,30,0" Height="200" Width="585" RenderTransformOrigin="0.5,0.5" >
+            <StackPanel.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform Y="-30"/>
+                </TransformGroup>
+            </StackPanel.RenderTransform>
+            <ListView x:Name="listView" Height="51" VerticalAlignment="Center" HorizontalAlignment="Center" Width="540" Visibility="Visible" Background="#FF1B1919" FontFamily="Calibri" FontWeight="Bold" FontSize="14" Foreground="#FFFBFBFB" RenderTransformOrigin="0.5,0.5"  >
+                <ListView.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform Y="20"/>
+                    </TransformGroup>
+                </ListView.RenderTransform>
+            </ListView>
+            <Button x:Name="detail" Content="Lire le contenu" Height="30" Width="172" Margin="10,20,10,10" VerticalAlignment="Center" HorizontalAlignment="Center" Visibility="Visible" Click="detail_Click" RenderTransformOrigin="0.5,0.5" BorderBrush="Black" Panel.ZIndex="-4" FontFamily="Calibri" FontWeight="Bold" FontSize="22" FontStyle="Normal" Foreground="#FFFFFBFB" Background="#FF383737" Cursor="Hand" >
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform Y="70"/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+            </Button>
         </StackPanel>
     </StackPanel>
 </Window>
