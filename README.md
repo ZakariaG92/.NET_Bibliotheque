@@ -4,8 +4,7 @@
 
   ##### Jassim EL HAROUI 
   ##### Zakaria GASMI 
-  ##### Hassan MAZYAD
-  ##### Janssen KOUBIKANI
+
 
 ## But
 
