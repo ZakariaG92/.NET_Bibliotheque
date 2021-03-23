@@ -14,7 +14,7 @@ image docker sur la branche docker_app  dans le dossier Docker_image dans un dos
 
 ##  lancer cette commande dans un terminal :
 
-docker load -i <path to image tar file>
+$ docker load -i <path to image tar file>
   
   
 En faisant docker images sur le terminal vous trouverez notre image.
